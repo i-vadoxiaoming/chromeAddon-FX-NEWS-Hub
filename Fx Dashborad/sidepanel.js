@@ -69,38 +69,6 @@ async function fetchDataFromSupabase() {
     }
 }
 
-// 从 GitHub 获取文件内容
-async function fetchDataFromGitHub(filePath, githubToken) {
-    const url = `https://api.github.com/repos/chenyijun777/chromeAddon/contents/${filePath}`;
-    console.log('Fetching file from GitHub:', url); // 打印请求的 URL
-    console.log('Using GitHub Token:', githubToken ? 'Yes' : 'No'); // 打印是否使用 Token
-
-    const headers = {
-        'Accept': 'application/vnd.github.v3+json',
-        'User-Agent': 'Fx Dashboard'
-    };
-    if (githubToken) {
-        headers['Authorization'] = `token ${githubToken}`;
-    }
-
-    try {
-        console.log('Sending request to GitHub API...'); // 打印请求开始
-        const response = await fetch(url, { headers }); // 直接调用 GitHub API
-        console.log('Response status:', response.status); // 打印响应状态码
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        console.log('Response data received:', data); // 打印响应数据
-        const content = atob(data.content); // 解码 base64 内容
-        console.log('Decoded content:', content); // 打印解码后的内容
-        return JSON.parse(content);
-    } catch (error) {
-        console.error('Error fetching file from GitHub:', error);
-        return null;
-    }
-}
-
 // 创建文章元素
 function createArticleElement(article) {
   const articleDiv = document.createElement('div');
@@ -277,15 +245,13 @@ window.addEventListener('resize', () => {
 document.addEventListener('DOMContentLoaded', async () => {
     console.log('DOMContentLoaded event fired'); // 确保事件监听器已触发
 
-    // 从 GitHub 读取一个文件
-    const filePath = 'Fx%20Dashborad/rss_data/output/news/en/rss_data_en_20250126_081438.json';
-    const githubToken = 'your_github_token'; // 如果需要访问私有仓库，提供 GitHub Token
-    const fileContent = await fetchDataFromGitHub(filePath, githubToken);
+    // 从 Supabase 获取数据
+    const data = await fetchDataFromSupabase();
 
-    if (fileContent) {
-        console.log('File content:', fileContent); // 打印文件内容
-        renderArticles(fileContent.articles); // 渲染文章列表
+    if (data) {
+        console.log('Data received:', data); // 打印接收到的数据
+        renderArticles(data); // 渲染文章列表
     } else {
-        console.error('Failed to fetch file content'); // 打印文件获取失败
+        console.error('Failed to fetch data from Supabase'); // 打印数据获取失败
     }
 });
