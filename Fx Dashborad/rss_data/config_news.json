@@ -1,0 +1,26 @@
+{
+  "rssSources": {
+    "zh": [
+      "https://feedx.net/rss/caijing.xml",
+      "https://feedx.net/rss/finance.xml",
+      "https://feedx.net/rss/zhengquan.xml",
+      "https://www.zhihu.com/rss",
+      "https://rsshub.app/fx678/kx"
+    ],
+    "en": [
+      "https://www.fxstreet.com/rss",
+      "https://www.investing.com/rss/news.rss",
+      "https://www.forexlive.com/feed/",
+      "https://www.dailyfx.com/feeds/market-news",
+      "https://www.reuters.com/rssFeed/businessNews",
+      "https://www.marketwatch.com/rss/topstories"
+    ],
+    "jp": [
+      "https://assets.wor.jp/rss/rdf/nikkei/business.rdf",
+      "https://assets.wor.jp/rss/rdf/nikkei/markets.rdf",
+      "https://assets.wor.jp/rss/rdf/reuters/business.rdf",
+      "https://assets.wor.jp/rss/rdf/bloomberg/top.rdf",
+      "https://assets.wor.jp/rss/rdf/nikkei/forex.rdf"
+    ]
+  }
+} 

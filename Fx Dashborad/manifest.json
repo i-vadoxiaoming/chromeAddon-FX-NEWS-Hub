@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "FX RSS Feed Panel",
+  "version": "1.0",
+  "description": "A Chrome side panel extension showing FX RSS feeds",
+  "permissions": [
+    "sidePanel",
+    "storage"
+  ],
+  "web_accessible_resources": [{
+    "resources": [
+      "rss_data/output/news/*/*.json",
+      "rss_data/output/file_index.json"
+    ],
+    "matches": ["<all_urls>"]
+  }],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icon-16.png",
+      "48": "icon-48.png",
+      "128": "icon-128.png"
+    }
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "icons": {
+    "16": "icon-16.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png"
+  }
+}
