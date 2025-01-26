@@ -10,6 +10,7 @@ from PIL import Image
 from io import BytesIO
 import os
 from requests.exceptions import RequestException
+import base64
 
 class RSSParser:
     def __init__(self):
