@@ -55,23 +55,24 @@ class RSSParser:
         print(f"Using empty {content_type} RSS URLs")
         return default_sources
 
-    def save_to_supabase(self, articles, content_type):
+    def save_to_supabase(self, articles, content_type, nation):
         """保存数据到 Supabase"""
         headers = {
             'apikey': self.supabase_key,
             'Authorization': f'Bearer {self.supabase_key}',
             'Content-Type': 'application/json',
-            'Prefer': 'return=minimal'
+            'Prefer': 'resolution=merge-duplicates'  # 使用 upsert 模式
         }
 
         for article in articles:
             # 准备数据
             data = {
                 'title': article['title'],
-                'link': article['link'],
+                'link': article['link'],  # 作为唯一键
                 'description': article.get('description', ''),
                 'image_url': article.get('image_url', ''),
                 'update_date': article.get('date', datetime.now().isoformat()),
+                'nation': nation  # 添加 nation 字段
             }
             
             # 根据内容类型设置标志
@@ -81,15 +82,15 @@ class RSSParser:
                 data['strategyFlag'] = 'strategy'
 
             try:
-                # 发送 POST 请求到 Supabase
+                # 使用 UPSERT 操作 - 如果记录存在则更新，不存在则插入
                 response = requests.post(
                     f'{self.supabase_url}/rest/v1/rss',
                     headers=headers,
                     json=data
                 )
                 
-                if response.status_code == 201:
-                    print(f"Successfully saved article: {article['title']}")
+                if response.status_code in [201, 200]:  # 201: Created, 200: Updated
+                    print(f"Successfully saved/updated article: {article['title']}")
                 else:
                     print(f"Error saving article: {article['title']}, Status: {response.status_code}")
                     print(f"Error details: {response.text}")
@@ -122,8 +123,13 @@ class RSSParser:
                         articles_by_lang[lang].extend(feed_articles)
                         print(f"Successfully added {len(feed_articles)} articles from {url}")
                         
-                        # 保存到 Supabase
-                        self.save_to_supabase(feed_articles, content_type)
+                        # 保存到 Supabase，传入对应的 nation
+                        nation_mapping = {
+                            'zh': 'cn',
+                            'en': 'en',
+                            'jp': 'jp'
+                        }
+                        self.save_to_supabase(feed_articles, content_type, nation_mapping[lang])
                     else:
                         print(f"No valid articles found in {url}")
                 except Exception as e:
