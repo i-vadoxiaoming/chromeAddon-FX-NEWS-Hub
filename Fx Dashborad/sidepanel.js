@@ -42,43 +42,38 @@ function switchTab(type) {
   updateRSS(type);
 }
 
-// 从Chrome存储获取RSS数据
-async function fetchRSSData(type = currentType) {
-  try {
-    const data = await chrome.storage.local.get(`rssData_${type}`);
-    const contentDiv = document.getElementById('rss-content');
-    
-    if (data[`rssData_${type}`] && data[`rssData_${type}`].articles) {
-      allArticles = data[`rssData_${type}`].articles;
-      
-      // 显示最新更新时间
-      const lastUpdated = document.createElement('div');
-      lastUpdated.className = 'last-updated';
-      lastUpdated.textContent = `Last Updated: ${data[`rssData_${type}`].last_updated}`;
-      contentDiv.appendChild(lastUpdated);
-      
-      await loadMoreArticles();
-    } else {
-      // 如果没有数据，尝试从后台获取
-      chrome.runtime.sendMessage({ 
-        action: 'updateRSS',
-        type: currentType
-      });
-      
-      contentDiv.innerHTML = '<div class="loading">Loading RSS feeds...</div>';
+// 从 Supabase 获取数据
+async function fetchDataFromSupabase() {
+    const supabaseUrl = 'https://jfhncvkdqrhasbffxeub.supabase.co'; // 替换为你的 Supabase URL
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpmaG5jdmtkcXJoYXNiZmZ4ZXViIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzc4ODUyMjYsImV4cCI6MjA1MzQ6MTIyNn0.dEp6lCwwj76Fjl22eszcw8M6q8vyTy_UoWRklH86QmI'; // 替换为你的 Supabase API 密钥
+    const tableName = 'rss'; // 替换为你的表名
+
+    try {
+        console.log('Fetching data from Supabase...'); // 打印请求开始
+        const response = await fetch(`${supabaseUrl}/rest/v1/${tableName}?select=title,link,description,image_url`, {
+            headers: {
+                'apikey': supabaseKey,
+                'Authorization': `Bearer ${supabaseKey}`
+            }
+        });
+        console.log('Response status:', response.status); // 打印响应状态码
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        console.log('Data received:', data); // 打印接收到的数据
+        return data;
+    } catch (error) {
+        console.error('Error fetching data from Supabase:', error);
+        return null;
     }
-  } catch (error) {
-    console.error('Error loading RSS data:', error);
-    document.getElementById('rss-content').innerHTML = 
-      '<div class="error">Error loading RSS feed data. Please try refreshing.</div>';
-  }
 }
 
 // 从 GitHub 获取文件内容
-async function fetchFileFromGitHub(filePath, githubToken) {
-    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+async function fetchDataFromGitHub(filePath, githubToken) {
     const url = `https://api.github.com/repos/chenyijun777/chromeAddon/contents/${filePath}`;
-    console.log('Fetching file from:', url); // 打印请求的 URL
+    console.log('Fetching file from GitHub:', url); // 打印请求的 URL
+    console.log('Using GitHub Token:', githubToken ? 'Yes' : 'No'); // 打印是否使用 Token
 
     const headers = {
         'Accept': 'application/vnd.github.v3+json',
@@ -89,33 +84,21 @@ async function fetchFileFromGitHub(filePath, githubToken) {
     }
 
     try {
-        const response = await fetch(proxyUrl + url, { headers });
+        console.log('Sending request to GitHub API...'); // 打印请求开始
+        const response = await fetch(url, { headers }); // 直接调用 GitHub API
         console.log('Response status:', response.status); // 打印响应状态码
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
-        console.log('Response data:', data); // 打印响应数据
+        console.log('Response data received:', data); // 打印响应数据
         const content = atob(data.content); // 解码 base64 内容
+        console.log('Decoded content:', content); // 打印解码后的内容
         return JSON.parse(content);
     } catch (error) {
         console.error('Error fetching file from GitHub:', error);
         return null;
     }
-}
-
-// 获取最新的 RSS 数据
-async function getLatestRssData(contentType = 'news', lang = 'en', githubToken) {
-    const indexPath = `Fx%20Dashborad/rss_data/output/news/file_index.json`;
-    console.log('Index path:', indexPath); // 打印文件路径
-    const index = await fetchFileFromGitHub(indexPath, githubToken);
-    if (!index || !index[lang]) {
-        return null;
-    }
-
-    const latestFile = index[lang][0]; // 获取最新的文件
-    const filePath = `Fx Dashborad/rss_data/output/${contentType}/${lang}/${latestFile}`;
-    return fetchFileFromGitHub(filePath, githubToken);
 }
 
 // 创建文章元素
@@ -211,23 +194,6 @@ async function loadMoreArticles() {
   }
 }
 
-// 监听滚动事件
-function handleScroll() {
-  const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-  const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
-  const clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
-
-  // 添加调试信息
-  console.log(`Scroll position: ${scrollTop + clientHeight}/${scrollHeight}`);
-  console.log(`ScrollTop: ${scrollTop}, ClientHeight: ${clientHeight}, ScrollHeight: ${scrollHeight}`);
-
-  // 检查是否接近底部
-  if (scrollTop + clientHeight >= scrollHeight - 50) { // 调整为更接近底部时触发
-    console.log('Loading more articles...');
-    loadMoreArticles();
-  }
-}
-
 // 渲染文章列表
 function renderArticles(articles) {
     const articleList = document.getElementById('article-list');
@@ -309,44 +275,17 @@ window.addEventListener('resize', () => {
 
 // 初始化
 document.addEventListener('DOMContentLoaded', async () => {
-  // 确保内容容器有足够的高度
-  contentContainer.style.minHeight = 'calc(100vh - 100px)'; // 减去header和loading的高度
+    console.log('DOMContentLoaded event fired'); // 确保事件监听器已触发
 
-  // 添加滚动监听
-  window.addEventListener('scroll', handleScroll);
+    // 从 GitHub 读取一个文件
+    const filePath = 'Fx%20Dashborad/rss_data/output/news/en/rss_data_en_20250126_081438.json';
+    const githubToken = 'your_github_token'; // 如果需要访问私有仓库，提供 GitHub Token
+    const fileContent = await fetchDataFromGitHub(filePath, githubToken);
 
-  // Tab 切换事件
-  document.querySelectorAll('.tab-button').forEach(button => {
-    button.addEventListener('click', () => {
-      switchTab(button.dataset.tab);
-    });
-  });
-
-  // 默认加载 news tab
-  const newsButton = document.querySelector('.tab-button[data-tab="news"]');
-  if (newsButton) {
-    newsButton.classList.add('active');
-    updateRSS('news');
-  }
-
-  // 添加刷新按钮事件监听
-  const refreshButton = document.getElementById('refresh-button');
-  if (refreshButton) {
-    refreshButton.addEventListener('click', () => {
-      updateRSS(currentType);
-    });
-  }
-
-  // 初始化加载数据
-  const githubToken = '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'; // 如果需要访问私有仓库，提供 GitHub Token
-  const latestNews = await getLatestRssData('news', 'en', githubToken);
-  if (latestNews && latestNews.articles) {
-    renderArticles(latestNews.articles);
-  } else {
-    console.error('No articles found');
-  }
-
-  setTimeout(() => {
-    document.getElementById('search-input').focus();
-  }, 100); // 延迟 100 毫秒
+    if (fileContent) {
+        console.log('File content:', fileContent); // 打印文件内容
+        renderArticles(fileContent.articles); // 渲染文章列表
+    } else {
+        console.error('Failed to fetch file content'); // 打印文件获取失败
+    }
 });
