@@ -44,27 +44,40 @@ function switchTab(type) {
 
 // 从 Supabase 获取数据
 async function fetchDataFromSupabase() {
-    const supabaseUrl = 'https://jfhncvkdqrhasbffxeub.supabase.co'; // 替换为你的 Supabase URL
-    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpmaG5jdmtkcXJoYXNiZmZ4ZXViIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzc4ODUyMjYsImV4cCI6MjA1MzQ6MTIyNn0.dEp6lCwwj76Fjl22eszcw8M6q8vyTy_UoWRklH86QmI'; // 替换为你的 Supabase API 密钥
-    const tableName = 'rss'; // 替换为你的表名
-
+    const supabaseUrl = 'https://jfhncvkdqrhasbffxeub.supabase.co';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpmaG5jdmtkcXJoYXNiZmZ4ZXViIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzc4ODUyMjYsImV4cCI6MjA1MzQ2MTIyNn0.dEp6lCwwj76Fjl22eszcw8M6q8vyTy_UoWRklH86QmI';
+  
     try {
-        console.log('Fetching data from Supabase...'); // 打印请求开始
-        const response = await fetch(`${supabaseUrl}/rest/v1/${tableName}?select=title,link,description,image_url`, {
+        console.log('Starting Supabase request...');
+        console.log('URL:', `${supabaseUrl}/rest/v1/rss?select=*`);
+        console.log('Headers:', {
+            'apikey': supabaseKey,
+            'Authorization': `Bearer ${supabaseKey}`
+        });
+
+        const response = await fetch(`${supabaseUrl}/rest/v1/rss?select=*`, {
+            method: 'GET',
             headers: {
+                'Content-Type': 'application/json',
                 'apikey': supabaseKey,
                 'Authorization': `Bearer ${supabaseKey}`
             }
         });
-        console.log('Response status:', response.status); // 打印响应状态码
+
+        console.log('Response status:', response.status);
+        console.log('Response headers:', Object.fromEntries(response.headers));
+
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            const errorText = await response.text();
+            console.error('Error response:', errorText);
+            throw new Error(`HTTP error! status: ${response.status}, message: ${errorText}`);
         }
+
         const data = await response.json();
-        console.log('Data received:', data); // 打印接收到的数据
+        console.log('Data received:', data);
         return data;
     } catch (error) {
-        console.error('Error fetching data from Supabase:', error);
+        console.error('Detailed error:', error);
         return null;
     }
 }
@@ -137,20 +150,20 @@ async function loadMoreArticles() {
     console.log('Already loading, skipping...');
     return;
   }
-
+  
   isLoading = true;
   loadingIndicator.style.display = 'block';
   console.log(`Loading page ${currentPage + 1}...`);
-
+  
   try {
-    const start = currentPage * articlesPerPage;
-    const end = start + articlesPerPage;
-    const articlesToLoad = allArticles.slice(start, end);
-
-    if (articlesToLoad.length > 0) {
+  const start = currentPage * articlesPerPage;
+  const end = start + articlesPerPage;
+  const articlesToLoad = allArticles.slice(start, end);
+  
+  if (articlesToLoad.length > 0) {
       console.log(`Loading ${articlesToLoad.length} articles...`);
       renderArticles(articlesToLoad);
-      currentPage++;
+    currentPage++;
     } else {
       console.log('No more articles to load');
     }
@@ -175,16 +188,21 @@ function renderArticles(articles) {
         const articleCard = document.createElement('div');
         articleCard.className = 'article-card';
 
+        // 缩略图容器
+        const imageContainer = document.createElement('div');
+        imageContainer.className = 'article-image-container';
+
         // 缩略图
         const image = document.createElement('img');
         image.src = article.image_url || 'https://via.placeholder.com/50';
         image.alt = article.title;
         image.className = 'article-image';
-        articleCard.appendChild(image);
+        imageContainer.appendChild(image);
+        articleCard.appendChild(imageContainer);
 
-        // 内容区域
-        const content = document.createElement('div');
-        content.className = 'article-content';
+        // 标题容器
+        const titleContainer = document.createElement('div');
+        titleContainer.className = 'article-title-container';
 
         // 标题（带超链接）
         const title = document.createElement('a');
@@ -192,17 +210,9 @@ function renderArticles(articles) {
         title.href = article.link || '#';
         title.textContent = article.title;
         title.target = '_blank'; // 在新标签页打开
-        content.appendChild(title);
+        titleContainer.appendChild(title);
 
-        // 描述
-        if (article.description) {
-            const description = document.createElement('p');
-            description.className = 'article-description';
-            description.textContent = article.description;
-            content.appendChild(description);
-        }
-
-        articleCard.appendChild(content);
+        articleCard.appendChild(titleContainer);
         articleList.appendChild(articleCard);
     });
 }
@@ -243,15 +253,26 @@ window.addEventListener('resize', () => {
 
 // 初始化
 document.addEventListener('DOMContentLoaded', async () => {
-    console.log('DOMContentLoaded event fired'); // 确保事件监听器已触发
+    console.log('DOMContentLoaded event fired');
 
     // 从 Supabase 获取数据
     const data = await fetchDataFromSupabase();
 
     if (data) {
-        console.log('Data received:', data); // 打印接收到的数据
-        renderArticles(data); // 渲染文章列表
+        console.log('Data received:', data);
+        renderArticles(data);
     } else {
-        console.error('Failed to fetch data from Supabase'); // 打印数据获取失败
+        console.error('Failed to fetch data from Supabase');
+    }
+
+    // 添加刷新按钮事件监听器
+    const refreshButton = document.getElementById('refresh-button');
+    if (refreshButton) {
+        refreshButton.addEventListener('click', async () => {
+            const newData = await fetchDataFromSupabase();
+            if (newData) {
+                renderArticles(newData);
+            }
+        });
     }
 });

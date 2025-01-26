@@ -8,4 +8,10 @@ curl -H "Authorization: Bearer github_pat_11A2NJJ7A05SxmPxsGiTdk_VhoLLtPwjefAsNL
 DB的设置密码：
    WZ_.Y474Mg.nytP
 
-   
+   supabase.com
+
+curl -X GET 'https://your-project.supabase.co/rest/v1/your_table_name' \
+-H "apikey: your-anon-key" \
+-H "Authorization: Bearer your-anon-key" \
+-H "Content-Type: application/json"
+
