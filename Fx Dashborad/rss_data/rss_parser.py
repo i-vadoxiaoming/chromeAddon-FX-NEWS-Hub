@@ -20,6 +20,10 @@ class RSSParser:
         }
         self.session = requests.Session()
         self.image_cache = {}
+        
+        # Supabase 配置
+        self.supabase_url = 'https://jfhncvkdqrhasbffxeub.supabase.co'
+        self.supabase_key = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpmaG5jdmtkcXJoYXNiZmZ4ZXViIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTczNzg4NTIyNiwiZXhwIjoyMDUzNDYxMjI2fQ.mezMLhqmDWy3oUTS8y9aqFDXgtol7L8ULUvoFUAN3-Y'
 
     def get_rss_urls(self, content_type='news'):
         """从本地配置文件读取RSS源"""
@@ -51,8 +55,50 @@ class RSSParser:
         print(f"Using empty {content_type} RSS URLs")
         return default_sources
 
+    def save_to_supabase(self, articles, content_type):
+        """保存数据到 Supabase"""
+        headers = {
+            'apikey': self.supabase_key,
+            'Authorization': f'Bearer {self.supabase_key}',
+            'Content-Type': 'application/json',
+            'Prefer': 'return=minimal'
+        }
+
+        for article in articles:
+            # 准备数据
+            data = {
+                'title': article['title'],
+                'link': article['link'],
+                'description': article.get('description', ''),
+                'image_url': article.get('image_url', ''),
+                'update_date': article.get('date', datetime.now().isoformat()),
+            }
+            
+            # 根据内容类型设置标志
+            if content_type == 'news':
+                data['newsFlag'] = 'news'
+            elif content_type == 'strategy':
+                data['strategyFlag'] = 'strategy'
+
+            try:
+                # 发送 POST 请求到 Supabase
+                response = requests.post(
+                    f'{self.supabase_url}/rest/v1/rss',
+                    headers=headers,
+                    json=data
+                )
+                
+                if response.status_code == 201:
+                    print(f"Successfully saved article: {article['title']}")
+                else:
+                    print(f"Error saving article: {article['title']}, Status: {response.status_code}")
+                    print(f"Error details: {response.text}")
+                    
+            except Exception as e:
+                print(f"Exception while saving article: {str(e)}")
+
     def parse_all_feeds(self, content_type='news'):
-        """解析所有配置的RSS源"""
+        """解析所有配置的RSS源并保存到 Supabase"""
         articles_by_lang = {
             'zh': [],
             'en': [],
@@ -61,8 +107,9 @@ class RSSParser:
         
         rss_sources = self.get_rss_urls(content_type)
         print(f"\nProcessing {content_type} feeds:")
+        
         for lang, urls in rss_sources.items():
-            if not urls:  # 如果没有配置RSS源，跳过这个语言
+            if not urls:
                 print(f"No {content_type} RSS sources configured for {lang}")
                 continue
                     
@@ -74,14 +121,15 @@ class RSSParser:
                     if feed_articles:
                         articles_by_lang[lang].extend(feed_articles)
                         print(f"Successfully added {len(feed_articles)} articles from {url}")
+                        
+                        # 保存到 Supabase
+                        self.save_to_supabase(feed_articles, content_type)
                     else:
                         print(f"No valid articles found in {url}")
                 except Exception as e:
                     print(f"Error processing feed {url}: {e}")
                     continue
 
-            print(f"Total articles for {lang}: {len(articles_by_lang[lang])}")
-        
         return articles_by_lang
 
     def parse_single_feed(self, rss_url):
@@ -502,7 +550,14 @@ def process_rss_feed(url, output_dir):
 
 def main():
     parser = RSSParser()
-    parser.save_to_json()
+    
+    # 处理新闻源
+    print("Processing news feeds...")
+    parser.parse_all_feeds('news')
+    
+    # 处理策略源
+    print("\nProcessing strategy feeds...")
+    parser.parse_all_feeds('strategy')
 
 if __name__ == '__main__':
     main()

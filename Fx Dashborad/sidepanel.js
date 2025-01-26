@@ -2,9 +2,10 @@
 console.log('Side Panel Loaded');
 
 let currentPage = 0;
-const articlesPerPage = 10;
+const pageSize = 10;
 let allArticles = [];
 let isLoading = false;
+let hasMore = true;
 let currentType = 'news';
 
 // 获取页面元素
@@ -43,41 +44,32 @@ function switchTab(type) {
 }
 
 // 从 Supabase 获取数据
-async function fetchDataFromSupabase() {
+async function fetchDataFromSupabase(page = 0) {
     const supabaseUrl = 'https://jfhncvkdqrhasbffxeub.supabase.co';
     const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpmaG5jdmtkcXJoYXNiZmZ4ZXViIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzc4ODUyMjYsImV4cCI6MjA1MzQ2MTIyNn0.dEp6lCwwj76Fjl22eszcw8M6q8vyTy_UoWRklH86QmI';
-  
+
     try {
-        console.log('Starting Supabase request...');
-        console.log('URL:', `${supabaseUrl}/rest/v1/rss?select=*`);
-        console.log('Headers:', {
-            'apikey': supabaseKey,
-            'Authorization': `Bearer ${supabaseKey}`
-        });
-
-        const response = await fetch(`${supabaseUrl}/rest/v1/rss?select=*`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'apikey': supabaseKey,
-                'Authorization': `Bearer ${supabaseKey}`
+        const start = page * pageSize;
+        console.log('Fetching data from Supabase...'); 
+        const response = await fetch(
+            `${supabaseUrl}/rest/v1/rss?select=*&order=update_date.desc&limit=${pageSize}&offset=${start}`, 
+            {
+                headers: {
+                    'apikey': supabaseKey,
+                    'Authorization': `Bearer ${supabaseKey}`
+                }
             }
-        });
-
-        console.log('Response status:', response.status);
-        console.log('Response headers:', Object.fromEntries(response.headers));
+        );
 
         if (!response.ok) {
-            const errorText = await response.text();
-            console.error('Error response:', errorText);
-            throw new Error(`HTTP error! status: ${response.status}, message: ${errorText}`);
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
 
         const data = await response.json();
         console.log('Data received:', data);
         return data;
     } catch (error) {
-        console.error('Detailed error:', error);
+        console.error('Error fetching data from Supabase:', error);
         return null;
     }
 }
@@ -144,45 +136,17 @@ function createArticleElement(article) {
   return articleDiv;
 }
 
-// 加载更多文章
-async function loadMoreArticles() {
-  if (isLoading) {
-    console.log('Already loading, skipping...');
-    return;
-  }
-  
-  isLoading = true;
-  loadingIndicator.style.display = 'block';
-  console.log(`Loading page ${currentPage + 1}...`);
-  
-  try {
-  const start = currentPage * articlesPerPage;
-  const end = start + articlesPerPage;
-  const articlesToLoad = allArticles.slice(start, end);
-  
-  if (articlesToLoad.length > 0) {
-      console.log(`Loading ${articlesToLoad.length} articles...`);
-      renderArticles(articlesToLoad);
-    currentPage++;
-    } else {
-      console.log('No more articles to load');
-    }
-  } catch (error) {
-    console.error('Error loading more articles:', error);
-  } finally {
-    loadingIndicator.style.display = 'none';
-    isLoading = false;
-  }
-}
-
 // 渲染文章列表
-function renderArticles(articles) {
+function renderArticles(articles, append = false) {
     const articleList = document.getElementById('article-list');
     if (!articleList) {
         console.error('Article list container not found');
         return;
     }
-    articleList.innerHTML = ''; // 清空现有内容
+
+    if (!append) {
+        articleList.innerHTML = ''; // 如果不是追加，则清空现有内容
+    }
 
     articles.forEach(article => {
         const articleCard = document.createElement('div');
@@ -215,6 +179,32 @@ function renderArticles(articles) {
         articleCard.appendChild(titleContainer);
         articleList.appendChild(articleCard);
     });
+}
+
+// 检查滚动位置并加载更多内容
+async function checkScrollAndLoad() {
+    if (isLoading || !hasMore) return;
+
+    const content = document.getElementById('content');
+    const threshold = 100; // 距离底部多少像素时开始加载
+
+    if (content.scrollHeight - content.scrollTop - content.clientHeight < threshold) {
+        isLoading = true;
+        document.getElementById('loading').style.display = 'block';
+
+        currentPage++;
+        const newArticles = await fetchDataFromSupabase(currentPage);
+
+        if (newArticles && newArticles.length > 0) {
+            renderArticles(newArticles, true);
+            hasMore = newArticles.length === pageSize;
+        } else {
+            hasMore = false;
+        }
+
+        isLoading = false;
+        document.getElementById('loading').style.display = 'none';
+    }
 }
 
 // 获取并显示RSS数据
@@ -255,21 +245,24 @@ window.addEventListener('resize', () => {
 document.addEventListener('DOMContentLoaded', async () => {
     console.log('DOMContentLoaded event fired');
 
-    // 从 Supabase 获取数据
-    const data = await fetchDataFromSupabase();
-
+    // 初始加载数据
+    const data = await fetchDataFromSupabase(0);
     if (data) {
-        console.log('Data received:', data);
         renderArticles(data);
-    } else {
-        console.error('Failed to fetch data from Supabase');
+        hasMore = data.length === pageSize;
     }
+
+    // 添加滚动事件监听器
+    const content = document.getElementById('content');
+    content.addEventListener('scroll', checkScrollAndLoad);
 
     // 添加刷新按钮事件监听器
     const refreshButton = document.getElementById('refresh-button');
     if (refreshButton) {
         refreshButton.addEventListener('click', async () => {
-            const newData = await fetchDataFromSupabase();
+            currentPage = 0;
+            hasMore = true;
+            const newData = await fetchDataFromSupabase(0);
             if (newData) {
                 renderArticles(newData);
             }

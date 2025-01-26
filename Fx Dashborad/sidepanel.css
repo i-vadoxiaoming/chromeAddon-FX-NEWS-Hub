@@ -12,7 +12,8 @@ body {
   margin: 0 auto;
   padding: 20px;
   overflow-y: auto; /* 确保内容容器允许垂直滚动 */
-  height: calc(100vh - 100px); /* 减去header和按钮的高度 */
+  height: calc(100vh - 60px);
+  scroll-behavior: smooth;
 }
 
 .article-list {
@@ -75,8 +76,10 @@ body {
 
 #loading {
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   color: #666;
+  font-size: 14px;
+  display: none;
 }
 
 #error-message {
@@ -109,4 +112,22 @@ body {
 
 #refresh-button:hover {
   background: #0056b3;
+}
+
+/* 滚动条样式 */
+.content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.content::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.content::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
