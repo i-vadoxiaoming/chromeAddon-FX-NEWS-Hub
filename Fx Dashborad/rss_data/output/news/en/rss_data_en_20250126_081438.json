@@ -1,0 +1,532 @@
+{
+  "last_updated": "2025-01-26T08:16:08.673857",
+  "language": "en",
+  "type": "news",
+  "articles": [
+    {
+      "title": "Dow Jones Industrial Average trims gains on Friday but still green for the week",
+      "link": "https://www.fxstreet.com/news/dow-jones-industrial-average-chills-on-friday-but-heads-for-second-weekly-gain-202501241812",
+      "date": "2025-01-24T20:49:27",
+      "description": "The Dow Jones Industrial Average (DJIA) churned in the midrange on Friday, testing down between 50 and 100 points on a slow trading day.",
+      "image_url": "https://editorial.fxsstatic.com/images/i/Equity-Index_DJI-2_Large.jpg"
+    },
+    {
+      "title": "NZD/USD Price Analysis: Pair extends gains and settled around 0.5705, momentum builds",
+      "link": "https://www.fxstreet.com/news/nzd-usd-price-analysis-pair-extends-gains-and-settled-around-05705-momentum-builds-202501242049",
+      "date": "2025-01-24T20:49:21",
+      "description": "The NZD/USD pair continued its upward trajectory on Friday, rising by 0.44% to settle at 0.5705 and mantains its footing above its 20-day Simple Moving Average (SMA).",
+      "image_url": "https://editorial.fxsstatic.com/images/i/NZDUSD-bearish-object_Large.png"
+    },
+    {
+      "title": "Gold price nears record high on weak US Dollar",
+      "link": "https://www.fxstreet.com/news/gold-price-nears-record-high-on-weak-us-dollar-202501242043",
+      "date": "2025-01-24T20:43:55",
+      "description": "Gold price extended its weekly gains, poised to challenge the all-time high of $2,790 rather sooner than later.",
+      "image_url": "https://editorial.fxsstatic.com/images/i/Commodities_Gold-2_Large.jpg"
+    },
+    {
+      "title": "Eurozone CFTC EUR NC Net Positions: €-62.5K  vs previous €-60.4K",
+      "link": "https://www.fxstreet.com/news/eurozone-cftc-eur-nc-net-positions-eu-625k-vs-previous-eu-604k-202501242032",
+      "date": "2025-01-24T20:32:36",
+      "description": "Eurozone CFTC EUR NC Net Positions: €-62.5K  vs previous €-60.4K",
+      "image_url": "https://editorial.fxstreet.com/images/Psychology/businessman-reading-newspaper-52940474_Small.jpg"
+    },
+    {
+      "title": "AUD/USD extends winning streak as Trump’s China deal hints weigh on USD",
+      "link": "https://www.fxstreet.com/news/aud-usd-extends-winning-streak-as-trumps-china-deal-hints-weigh-on-usd-202501242032",
+      "date": "2025-01-24T20:32:32",
+      "description": "AUD/USD attracted buyers on Friday after President Trump suggested a trade agreement with China remains within reach, reinforcing a risk-on mood.",
+      "image_url": "https://editorial.fxsstatic.com/images/i/AUDUSD-neutral-object_Large.png"
+    },
+    {
+      "title": "United States CFTC Gold NC Net Positions: $300.8K  vs $279.4K",
+      "link": "https://www.fxstreet.com/news/united-states-cftc-gold-nc-net-positions-3008k-vs-2794k-202501242032",
+      "date": "2025-01-24T20:32:31",
+      "description": "United States CFTC Gold NC Net Positions: $300.8K  vs $279.4K",
+      "image_url": "https://editorial.fxstreet.com/images/Psychology/businessman-reading-newspaper-52940474_Small.jpg"
+    },
+    {
+      "title": "Australia CFTC AUD NC Net Positions increased to $-71.3K from previous $-77.6K",
+      "link": "https://www.fxstreet.com/news/australia-cftc-aud-nc-net-positions-increased-to-713k-from-previous-776k-202501242032",
+      "date": "2025-01-24T20:32:25",
+      "description": "Australia CFTC AUD NC Net Positions increased to $-71.3K from previous $-77.6K",
+      "image_url": "https://editorial.fxstreet.com/images/Psychology/businessman-reading-newspaper-52940474_Small.jpg"
+    },
+    {
+      "title": "Japan CFTC JPY NC Net Positions increased to ¥-14.7K from previous ¥-29.4K",
+      "link": "https://www.fxstreet.com/news/japan-cftc-jpy-nc-net-positions-increased-to-y-147k-from-previous-y-294k-202501242032",
+      "date": "2025-01-24T20:32:18",
+      "description": "Japan CFTC JPY NC Net Positions increased to ¥-14.7K from previous ¥-29.4K",
+      "image_url": "https://editorial.fxstreet.com/images/Psychology/businessman-reading-newspaper-52940474_Small.jpg"
+    },
+    {
+      "title": "United Kingdom CFTC GBP NC Net Positions dipped from previous £0.4K to £-8.3K",
+      "link": "https://www.fxstreet.com/news/united-kingdom-cftc-gbp-nc-net-positions-dipped-from-previous-ps04k-to-ps-83k-202501242032",
+      "date": "2025-01-24T20:32:14",
+      "description": "United Kingdom CFTC GBP NC Net Positions dipped from previous £0.4K to £-8.3K",
+      "image_url": "https://editorial.fxstreet.com/images/Psychology/businessman-reading-newspaper-52940474_Small.jpg"
+    },
+    {
+      "title": "United States CFTC Oil NC Net Positions down to 298.8K from previous 306.3K",
+      "link": "https://www.fxstreet.com/news/united-states-cftc-oil-nc-net-positions-down-to-2988k-from-previous-3063k-202501242032",
+      "date": "2025-01-24T20:32:06",
+      "description": "United States CFTC Oil NC Net Positions down to 298.8K from previous 306.3K",
+      "image_url": "https://editorial.fxstreet.com/images/Psychology/businessman-reading-newspaper-52940474_Small.jpg"
+    },
+    {
+      "title": "United States CFTC S&P 500 NC Net Positions fell from previous $-30.5K to $-75.7K",
+      "link": "https://www.fxstreet.com/news/united-states-cftc-sp-500-nc-net-positions-fell-from-previous-305k-to-757k-202501242031",
+      "date": "2025-01-24T20:31:57",
+      "description": "United States CFTC S&amp;P 500 NC Net Positions fell from previous $-30.5K to $-75.7K",
+      "image_url": "https://editorial.fxstreet.com/images/Psychology/businessman-reading-newspaper-52940474_Small.jpg"
+    },
+    {
+      "title": "Canadian Dollar recovers limited ground on improving sentiment",
+      "link": "https://www.fxstreet.com/news/canadian-dollar-recovers-limited-ground-on-improving-sentiment-202501242027",
+      "date": "2025-01-24T20:27:46",
+      "description": "The Canadian Dollar (CAD) gained around one-quarter of one percent against the Greenback on Friday, testing higher but still firmly entrenched in a consolidation pattern that kicked off in mid-December.",
+      "image_url": "https://editorial.fxsstatic.com/images/i/USDCAD-neutral-line_Large.png"
+    },
+    {
+      "title": "Mexican Peso rallies strongly, poised for positive week close",
+      "link": "https://www.fxstreet.com/news/mexican-peso-rallies-as-us-dollar-weakens-inflation-eases-toward-banxicos-target-202501241843",
+      "date": "2025-01-24T20:25:34",
+      "description": "The Mexican Peso (MXN) surged in early trading during the North American session as mixed economic growth figures emerged in Mexico, though broad US Dollar (USD) weakness kept the Peso bid.",
+      "image_url": "https://editorial.fxsstatic.com/images/i/mexico-2_Large.png"
+    },
+    {
+      "title": "US Dollar closes a losing week after economic data",
+      "link": "https://www.fxstreet.com/news/us-dollar-slides-amid-mixed-pmi-data-and-softer-tariff-comments-202501241815",
+      "date": "2025-01-24T20:09:04",
+      "description": "The US Dollar Index (DXY), which measures the value of the US Dollar against a basket of currencies, is experiencing sustained losses as it sinks below 107.50, its lowest level this week.",
+      "image_url": "https://editorial.fxsstatic.com/images/i/USD_Neutral-Tendency-3_Large.png"
+    },
+    {
+      "title": "Silver Price Forecast: XAG/USD climbs steadily, bulls capped by 100-day SMA",
+      "link": "https://www.fxstreet.com/news/silver-price-forecast-xag-usd-climbs-steadily-bulls-capped-by-100-day-sma-202501241856",
+      "date": "2025-01-24T18:56:56",
+      "description": "Silver price recovers some ground and trades with gains of 0.91% yet it has failed to clear key resistance at the 100-day Simple Moving Average (SMA) at $30.95.",
+      "image_url": "https://editorial.fxsstatic.com/images/i/Commodities_Silver-1_Large.jpg"
+    },
+    {
+      "title": "United States Baker Hughes US Oil Rig Count declined to 472 from previous 478",
+      "link": "https://www.fxstreet.com/news/united-states-baker-hughes-us-oil-rig-count-declined-to-472-from-previous-478-202501241801",
+      "date": "2025-01-24T18:01:59",
+      "description": "United States Baker Hughes US Oil Rig Count declined to 472 from previous 478",
+      "image_url": "https://editorial.fxstreet.com/images/Psychology/businessman-reading-newspaper-52940474_Small.jpg"
+    },
+    {
+      "title": "Pound Sterling Price News and Forecast: GBP/USD outperforms USD as Trump backs immediate rate cuts",
+      "link": "https://www.fxstreet.com/news/pound-sterling-price-news-and-forecast-gbp-usd-outperforms-usd-as-trump-backs-immediate-rate-cuts-202501241636",
+      "date": "2025-01-24T16:36:36",
+      "description": "The Pound Sterling (GBP) jumps above 1.2400 against the US Dollar (USD) on Friday.",
+      "image_url": "https://editorial.fxsstatic.com/images/i/GBPUSD-neutral-object_Large.png"
+    },
+    {
+      "title": "EUR/USD Price Analysis: Pair climbs above 1.0485 as bullish momentum strengthens",
+      "link": "https://www.fxstreet.com/news/eur-usd-price-analysis-pair-climbs-above-10485-as-bullish-momentum-strengthens-202501241601",
+      "date": "2025-01-24T16:01:34",
+      "description": "The EUR/USD pair ended the week on a bullish note, climbing 0.66% to settle at 1.0485 on Friday.",
+      "image_url": "https://editorial.fxsstatic.com/images/i/EURUSD-bearish-object_Large.png"
+    },
+    {
+      "title": "US Dollar sinks after US PMI's reveals US outperformance stalls",
+      "link": "https://www.fxstreet.com/news/us-dollar-on-track-to-lose-around-2-of-value-this-week-202501241247",
+      "date": "2025-01-24T15:20:11",
+      "description": "The US Dollar Index (DXY), which tracks the performance of the US Dollar against six different major currencies, is sinking back below 107.50 in an eventful Friday, facing an intraday loss on Friday after US President Donald Trump left surprised with comments the previous da",
+      "image_url": "https://editorial.fxsstatic.com/images/i/DXY-bearish-line_Large.png"
+    },
+    {
+      "title": "United States UoM 5-year Consumer Inflation Expectation came in at 3.2% below forecasts (3.3%) in January",
+      "link": "https://www.fxstreet.com/news/united-states-uom-5-year-consumer-inflation-expectation-came-in-at-32-below-forecasts-33-in-january-202501241500",
+      "date": "2025-01-24T15:00:03",
+      "description": "United States UoM 5-year Consumer Inflation Expectation came in at 3.2% below forecasts (3.3%) in January",
+      "image_url": "https://editorial.fxstreet.com/images/Psychology/businessman-reading-newspaper-52940474_Small.jpg"
+    },
+    {
+      "title": "United States Existing Home Sales (MoM) above forecasts (4.19M) in December: Actual (4.24M)",
+      "link": "https://www.fxstreet.com/news/united-states-existing-home-sales-mom-above-forecasts-419m-in-december-actual-424m-202501241500",
+      "date": "2025-01-24T15:00:02",
+      "description": "United States Existing Home Sales (MoM) above forecasts (4.19M) in December: Actual (4.24M)",
+      "image_url": "https://editorial.fxstreet.com/images/Psychology/businessman-reading-newspaper-52940474_Small.jpg"
+    },
+    {
+      "title": "United States Existing Home Sales Change (MoM) fell from previous 4.8% to 2.2% in December",
+      "link": "https://www.fxstreet.com/news/united-states-existing-home-sales-change-mom-fell-from-previous-48-to-22-in-december-202501241500",
+      "date": "2025-01-24T15:00:00",
+      "description": "United States Existing Home Sales Change (MoM) fell from previous 4.8% to 2.2% in December",
+      "image_url": "https://editorial.fxstreet.com/images/Psychology/businessman-reading-newspaper-52940474_Small.jpg"
+    },
+    {
+      "title": "United States Michigan Consumer Sentiment Index below expectations (73.2) in January: Actual (71.1)",
+      "link": "https://www.fxstreet.com/news/united-states-michigan-consumer-sentiment-index-below-expectations-732-in-january-actual-711-202501241500",
+      "date": "2025-01-24T15:00:00",
+      "description": "United States Michigan Consumer Sentiment Index below expectations (73.2) in January: Actual (71.1)",
+      "image_url": "https://editorial.fxstreet.com/images/Psychology/businessman-reading-newspaper-52940474_Small.jpg"
+    },
+    {
+      "title": "US S&P Global Manufacturing PMI rises to 50.1 in January, Services PMI retreats to 52.8",
+      "link": "https://www.fxstreet.com/news/us-sp-global-manufacturing-pmi-rises-to-501-in-january-services-pmi-retreats-to-528-202501241453",
+      "date": "2025-01-24T14:53:09",
+      "description": "The economic activity in the US' private sector continued to expand in January, albeit at a softer pace, with the S&amp;P Global Composite PMI declining to 52.4 from 55.4 in December.",
+      "image_url": "https://editorial.fxsstatic.com/images/i/Economic-Indicator_PMI-3_Large.png"
+    },
+    {
+      "title": "United States S&P Global Composite PMI down to 52.4 in January from previous 55.4",
+      "link": "https://www.fxstreet.com/news/united-states-sp-global-composite-pmi-down-to-524-in-january-from-previous-554-202501241445",
+      "date": "2025-01-24T14:45:48",
+      "description": "United States S&amp;P Global Composite PMI down to 52.4 in January from previous 55.4",
+      "image_url": "https://editorial.fxstreet.com/images/Psychology/businessman-reading-newspaper-52940474_Small.jpg"
+    },
+    {
+      "title": "United States S&P Global Services PMI below expectations (56.5) in January: Actual (52.8)",
+      "link": "https://www.fxstreet.com/news/united-states-sp-global-services-pmi-below-expectations-565-in-january-actual-528-202501241445",
+      "date": "2025-01-24T14:45:45",
+      "description": "United States S&amp;P Global Services PMI below expectations (56.5) in January: Actual (52.8)",
+      "image_url": "https://editorial.fxstreet.com/images/Psychology/businessman-reading-newspaper-52940474_Small.jpg"
+    },
+    {
+      "title": "United States S&P Global Manufacturing PMI came in at 50.1, above expectations (49.6) in January",
+      "link": "https://www.fxstreet.com/news/united-states-sp-global-manufacturing-pmi-came-in-at-501-above-expectations-496-in-january-202501241445",
+      "date": "2025-01-24T14:45:45",
+      "description": "United States S&amp;P Global Manufacturing PMI came in at 50.1, above expectations (49.6) in January",
+      "image_url": "https://editorial.fxstreet.com/images/Psychology/businessman-reading-newspaper-52940474_Small.jpg"
+    },
+    {
+      "title": "EUR/USD strengthens on upbeat Eurozone flash PMI",
+      "link": "https://www.fxstreet.com/news/eur-usd-soars-on-upbeat-eurozone-preliminary-pmi-data-202501241015",
+      "date": "2025-01-24T14:34:10",
+      "description": "EUR/USD rallies to near the psychological resistance of 1.0500 on Friday as the Hamburg Commercial Bank (HCOB) reported that the Eurozone preliminary Composite Purchasing Managers' Index (PMI) grew in January after shrinking in the last two months.",
+      "image_url": "https://editorial.fxsstatic.com/images/i/EURUSD-bullish-line_Large.png"
+    },
+    {
+      "title": "USD/JPY rebounds to near 156.50 as BoJ refrains from committing specific rate hike path",
+      "link": "https://www.fxstreet.com/news/usd-jpy-rebounds-to-near-15650-as-boj-refrains-from-committing-specific-rate-hike-path-202501241428",
+      "date": "2025-01-24T14:28:02",
+      "description": "The USD/JPY recovers Bank of Japan’s (BoJ) interest rate hike-inspired losses and rises to near 156.60 in Friday’s North American session.",
+      "image_url": "https://editorial.fxsstatic.com/images/i/USDJPY-bullish-object_Large.png"
+    },
+    {
+      "title": "EUR/GBP Price Forecast: Retreats below 0.8450 toward 200-day SMA",
+      "link": "https://www.fxstreet.com/news/eur-gbp-price-forecast-retreats-below-08450-toward-200-day-sma-202501241423",
+      "date": "2025-01-24T14:23:35",
+      "description": "The EUR/GBP failed to extend its gains for the second straight day, as stir resistance near 0.8473 was strong enough to be cleared by bulls.",
+      "image_url": "https://editorial.fxsstatic.com/images/i/EURGBP_Neutral-1_Large.jpg"
+    },
+    {
+      "title": "Barclays investigates if Bitcoin prices lead to increased hiring for crypto jobs",
+      "link": "https://www.investing.com/news/cryptocurrency-news/barclays-investigates-if-bitcoin-prices-lead-to-increased-hiring-for-crypto-jobs-3827906",
+      "date": "2025-01-26T08:00:00",
+      "description": "",
+      "image_url": "https://i-invdn-com.investing.com/news/LYNXMPED703B3_M.jpg"
+    },
+    {
+      "title": "Who is at risk of 25% USA tariffs in Europe?",
+      "link": "https://www.investing.com/news/stock-market-news/who-is-at-risk-of-25-usa-tariffs-in-europe-3827618",
+      "date": "2025-01-26T08:00:00",
+      "description": "",
+      "image_url": "https://i-invdn-com.investing.com/news/LYNXMPED1J0Z4_M.jpg"
+    },
+    {
+      "title": "West cries foul over Belarus election as Lukashenko eyes seventh term",
+      "link": "https://www.investing.com/news/world-news/west-cries-foul-over-belarus-election-as-lukashenko-eyes-seventh-term-3830877",
+      "date": "2025-01-26T07:51:36",
+      "description": "",
+      "image_url": "https://i-invdn-com.investing.com/trkd-images/LYNXNPEL0P01J_L.jpg"
+    },
+    {
+      "title": "LONGi Chairman Zhong Baoshen Spoke at Davos 2025 Conference: Global Cooperation Will Accelerate the Adoption of Photovoltaic Technology, Empowering Humanity to Achieve Energy Equity",
+      "link": "https://www.investing.com/news/press-releases/longi-chairman-zhong-baoshen-spoke-at-davos-2025-conference-global-cooperation-will-accelerate-the-adoption-of-photovoltaic-technology-empowering-humanity-to-achieve-energy-equity-93CH-3830876",
+      "date": "2025-01-26T07:36:09",
+      "description": "",
+      "image_url": "https://i-invdn-com.investing.com/news/World_News_10_M_1440052130.jpg"
+    },
+    {
+      "title": "Trump says he may consider rejoining World Health Organization",
+      "link": "https://www.investing.com/news/coronavirus/trump-says-he-may-consider-rejoining-world-health-organization-3830856",
+      "date": "2025-01-26T07:10:36",
+      "description": "",
+      "image_url": "https://i-invdn-com.investing.com/trkd-images/LYNXNPEL0O0BU_L.jpg"
+    },
+    {
+      "title": "Trump says Jordan, Egypt should take more Palestinians from Gaza",
+      "link": "https://www.investing.com/news/world-news/trump-says-jordan-egypt-should-take-more-palestinians-from-gaza-3830875",
+      "date": "2025-01-26T06:40:44",
+      "description": "",
+      "image_url": "https://i-invdn-com.investing.com/trkd-images/LYNXNPEL0P017_L.jpg"
+    },
+    {
+      "title": "Monuments defaced as Australians protest, celebrate national day",
+      "link": "https://www.investing.com/news/world-news/monuments-defaced-as-australians-protest-celebrate-national-day-3830874",
+      "date": "2025-01-26T06:31:42",
+      "description": "",
+      "image_url": "https://i-invdn-com.investing.com/trkd-images/LYNXNPEL0P012_L.jpg"
+    },
+    {
+      "title": "Bangladesh central bank hires auditors for banks it says lost $17 billion, FT reports",
+      "link": "https://www.investing.com/news/stock-market-news/bangladesh-central-bank-hires-big-four-audit-firms-to-review-banks-it-says-lost-17-billion-ft-reports-3830873",
+      "date": "2025-01-26T06:25:29",
+      "description": "",
+      "image_url": "https://i-invdn-com.investing.com/trkd-images/LYNXNPEL0P010_L.jpg"
+    },
+    {
+      "title": "Trump makes 2,000-pound bombs available to Israel, undoing Biden pause",
+      "link": "https://www.investing.com/news/world-news/white-house-makes-2000pound-bombs-available-to-israel-undoing-bidens-pause-3830827",
+      "date": "2025-01-26T05:05:31",
+      "description": "",
+      "image_url": "https://i-invdn-com.investing.com/trkd-images/LYNXNPEL0O090_L.jpg"
+    },
+    {
+      "title": "Analysis-Trump, at zenith of power, moves quickly to 'take over' Washington",
+      "link": "https://www.investing.com/news/world-news/analysistrump-at-zenith-of-power-moves-quickly-to-take-over-washington-3830765",
+      "date": "2025-01-26T04:31:43",
+      "description": "",
+      "image_url": "https://i-invdn-com.investing.com/trkd-images/LYNXNPEL0O03I_L.jpg"
+    },
+    {
+      "title": "Will Chinese DeepSeek Disrupt NVIDIA?",
+      "link": "https://www.forexlive.com/news/will-chinese-deepseek-disrupt-nvidia-20250125/",
+      "date": "2025-01-25T22:35:24",
+      "description": "<p>Will Chinese DeepSeek Disrupt NVIDIA and the American AI Industry?</p><p>The global AI race has taken an intriguing turn with the emergence of China's DeepSeek, touted by some as a potential disruptor to NVIDIA's dominance in the AI hardware space. As speculation swirls, stock investors, analysts, and thought leaders are left grappling with the critical question: Is DeepSeek a genuine threat to NVIDIA and the broader American AI industry, or is this a case of overhyped news amplified by interested parties?</p><p>The news that DeepSeek's model surpassed OpenAI's o1 in specific reasoning tests has sparked intense debate within the AI community. This development has significant implications for the AI market, potentially impacting the stock prices of companies like NVIDIA and other AI-related companies.</p><p>I’ll preface this by saying that I am not a renowned expert in deep technology or AI hardware. I don’t claim to have a definitive answer. Instead, I propose a method to find the answer—not by theorizing endlessly but by observing how the stock market reacts. The stock market, with its collective wisdom and ability to process information, often acts as the closest thing we have to a truth detector.</p><p>Let’s explore the context, evaluate the key factors at play, and develop a logical framework to assess the significance of DeepSeek’s emergence.</p><p>The Landscape: NVIDIA’s Moat vs. DeepSeek’s Promise</p><p>NVIDIA has long been the undisputed leader in AI hardware, leveraging its GPUs and CUDA software ecosystem to dominate the market. Its ecosystem is sticky—developers, hyperscalers, and enterprise clients are deeply entrenched in its platform, creating significant switching costs. This is not unlike Apple’s ecosystem, where loyal users and interconnected services create barriers to exit.</p><p>DeepSeek, on the other hand, reportedly offers a more cost-efficient AI solution. The analogy some have drawn is that DeepSeek could be the “cheaper smartphone” to NVIDIA’s “iPhone.” In the smartphone industry, the availability of cheaper alternatives has undeniably shifted market share, particularly in emerging markets. But did this disrupt Apple’s stock price or its dominance among its loyal user base? Not significantly. The same could apply to NVIDIA, depending on whether DeepSeek can replicate NVIDIA’s ecosystem or merely compete on price and performance.</p><p>The Role of Market Reactions: Finding the Answer in the Price</p><p>Here’s where the stock market comes in. Instead of relying solely on speculative opinions, I suggest that the best way to gauge the impact of DeepSeek is to observe NVIDIA’s stock price. The stock market is often a better truth-teller than any single analysis. It reflects collective sentiment, informed by analysts, insiders, and countless external factors.</p><p>What to Watch:</p><ol><li><p>The Reaction to the NewsSince the DeepSeek news broke, NVIDIA’s stock has not shown any drastic reaction. It actually rose apx 2.5% after the news came out, if we look at NVDA stock price from the next day it traded, to the close of the week. This lack of significant movement, not to mention lack of stock price decline (crash...?) -- suggests that the market does not yet see DeepSeek as a significant disruptor. If it were, we would expect a sharp and sustained price decline. Who remembers other cases, such as Facebook’s Cambridge Analytica scandal a few years ago and the immediate FB stock decline? </p></li><li><p>Earnings as a CatalystNVIDIA’s upcoming earnings report will be pivotal. Pay close attention to management’s commentary, particularly regarding competitive risks in the AI space. If DeepSeek is a genuine threat, it could show up in NVIDIA’s guidance or performance, especially in its data center segment. I propose observing NVIDIA’s stock price from the time the news broke until two weeks after earnings. This period should provide enough data to assess whether DeepSeek is having a tangible impact, even if will not be talked about. The price knows, and it almost always knows better than you, or anyone else.</p></li></ol><p>Interpreting the Price Action Post Upcoming Nvidia Earnings (Scheduled for 26 Feb 2025): What It Might Tell Us</p><p>Scenario 1 for the Upcoming Nvidia Earnings Report: Stock Rises or Remains Stable</p><p>If NVIDIA’s stock rises or stays within its current range, the market is likely signaling that DeepSeek is not a major disruptor. Perhaps NVIDIA’s ecosystem is too entrenched, or DeepSeek’s solution doesn’t offer enough differentiation. It’s also possible that other factors, such as AI demand growth or NVIDIA’s new Blackwell chips, outweigh any competitive threats.</p><p>Scenario 2 for the Upcoming Nvidia Earnings Report: Stock Declines</p><p>If NVIDIA’s stock declines, the reasons warrant closer examination. Is the drop due to bottlenecks in Blackwell chip deliveries, macroeconomic pressures, or broader market trends? Or does it reflect legitimate concerns about DeepSeek? Analysts will need to scrutinize earnings commentary, data center revenue trends, and any shifts in market share. It’s critical to avoid jumping to conclusions without understanding the underlying reasons for the decline.</p><p>The Unknowns: Factors and Their Weights</p><p>One of the challenges in analyzing stock movements is that we can never know all the factors affecting a stock price, nor the relative weights of those factors. We might think we know, we may hear great explanations, but we don't exacly know. Earnings reports often illustrate this: a company might beat revenue and EPS estimates, yet the stock declines. Analysts scramble to explain why—was it slower sales growth, weaker guidance, or some other reason? The reality is that the stock market processes countless variables simultaneously, and not all of them are visible to us. The granular variables and their weights will never be known to us. But price knows.</p><p>The same principle applies here. Even if NVIDIA’s stock remains stable, it’s possible that DeepSeek is a growing threat but not yet significant enough to outweigh other factors. Conversely, if the stock declines, DeepSeek may not be the primary cause. This complexity is why I emphasize looking at the stock price holistically and over time, rather than rushing to judgment based on short-term moves.</p><p>Seeking the Deep Behind DeepSeek: Trust the Price, Not the News</p><p>DeepSeek’s potential to disrupt NVIDIA and the American AI industry is an open question, but the best way to find an answer is to let the stock market speak. Watch NVIDIA’s price action from the time the news broke until two weeks after its upcoming earnings. If the stock remains stable or rises, it’s likely that DeepSeek is not a significant threat. If it declines, dig deeper into the reasons—whether they’re related to DeepSeek or other factors.</p><p>While price action can act as a “truth detector,” it’s not infallible. The market may not immediately price in all information, and short-term movements can be influenced by noise, speculation, or interested parties (e.g., short sellers amplifying fears about DeepSeek). As always, exercise caution and remain open to multiple interpretations. But do follow the price more than anyone's opinion, especially yours.</p><p>Ultimately, the price knows. Follow the money. Follow the price and you shall be closer to finding the truth.</p><p>So far, here is the most simple price chart of NVDA stock within the past 100 days. I don't see any panic yet from the \"truth machine\", do you? You can decide for yourself is you see any DeepSeek news related panic. But let's wait till 2 weeks after the next earnings to unveal further \"truth\".</p><p>Disclaimer: This article is for informational purposes only and should not be construed as investment advice. Always do your own research and consult with a professional before making investment decisions.</p>\n\n                This article was written by Itai Levitan at www.forexlive.com.",
+      "image_url": "https://images.forexlive.com/images/NVDA%20stock%20and%20its%20price%20prediction%20-%20we%20asked%20our%20AI_id_1e808cab-c98b-46ab-94df-7a3482f7eec8_size975.jpg"
+    },
+    {
+      "title": "Weekly Market Outlook (27-31 January)",
+      "link": "https://www.forexlive.com/news/weekly-market-outlook-27-31-january-20250125/",
+      "date": "2025-01-25T17:01:15",
+      "description": "<p>UPCOMING\nEVENTS:</p><ul><li>Monday: China PMIs, German IFO.</li><li>Tuesday: US Durable Goods Orders, US Consumer Confidence.</li><li>Wednesday: Australia Q4 CPI, BoC Policy Decision, FOMC\n     Policy Decision.</li><li>Thursday: Eurozone GDP and Unemployment Rate, ECB Policy\n     Decision, US Q4 GDP, US Jobless Claims.</li><li>Friday: Tokyo CPI, Japan Unemployment Rate, Japan\n     Industrial Production and Retail Sales, Swiss Retail Sales, France CPI,\n     German CPI, Canada GDP, US Core PCE, US Q4 ECI.  </li></ul><p>Tuesday</p><p>The US Consumer\nConfidence is expected at 106.0 vs. 104.7 prior. <a href=\"https://www.forexlive.com/news/us-december-consumer-confidence-1047-vs-1133-expected-20241223/\">Last month</a>, consumer confidence dropped to 104.7 vs. 112.8 in\nNovember.</p><p>Dana M. Peterson,\nChief Economist at The Conference Board said: “The recent rebound in consumer\nconfidence was not sustained in December as the Index dropped back to the middle\nof the range that has prevailed over the past two years”.</p><p>“While weaker\nconsumer assessments of the present situation and expectations contributed to\nthe decline, the expectations component saw the sharpest drop. Consumer\nviews of current labour market conditions continued to improve,\nconsistent with recent jobs and unemployment data, but their assessment of\nbusiness conditions weakened.” </p><p>This might have\nbeen just an outlier among lots of upbeat economic data. Overall, we are\nstill in the range that has prevailed over the past two years, and we\nhaven’t got any strong catalyst that could suggest a sudden weakening in the\neconomy.</p><p>Wednesday</p><p>The Australian Q4\nCPI Y/Y is expected at 2.5% vs. 2.8% prior, while the Q/Q measure is seen at\n0.3% vs. 0.2% prior. The RBA is focused on the underlying inflation figures\nwith the Trimmed Mean CPI Y/Y expected at 3.3% vs. 3.5% prior, while the Q/Q\nreading is seen at 0.6% vs. 0.8% prior. </p><p>As a reminder, the\nRBA <a href=\"https://www.forexlive.com/news/aussie-unwinds-monday-gains-as-rba-softens-policy-stance-20241210/\">softened further</a> its stance at the last policy decision as it nears\nthe first rate cut. The market is seeing a 54% chance of a 25 bps cut in\nFebruary although the first fully priced cut is seen in April.</p><p>The latest <a href=\"https://www.forexlive.com/news/australia-december-2024-unemployment-rate-40-vs-40-expected-20250116/\">Australian Employment</a> report came in a touch softer than expected but\ndidn’t change much in terms of market pricing which was influenced more by the\nrecent <a href=\"https://www.forexlive.com/news/australian-november-cpi-23-yy-vs-expected-22-20250108/\">Australian Monthly\nCPI</a> that showed core\ninflation easing with the Trimmed Mean CPI Y/Y coming in at 3.2%.</p><p>A soft Q4 CPI\nreport will likely see the market sealing a rate cut in February already, while higher than expected figures might\nkeep it on the edge with the probabilities favouring an April action.</p><p>The BoC is expected\nto cut interest rates by 25 bps and bringing the policy rate to 3.00%. As a\nreminder, the BoC cut interest rates by 50 bps at the last policy meeting but <a href=\"https://www.forexlive.com/centralbank/bank-of-canada-rate-decision-50-basis-point-rate-cut-20241211/\">dropped the line</a> saying “if the economy evolves broadly in line with\nour latest forecast, we expect to reduce the policy rate further\", which\nsuggests that we reached the peak in \"dovishness\" and the\ncentral bank will now switch to 25 bps cuts and will slow the pace of easing. </p><p>The recent <a href=\"https://www.forexlive.com/news/canada-december-employment-change-909-vs-250k-estimate-20250110/\">Canadian Employment</a> report was much stronger than expected, while the <a href=\"https://www.forexlive.com/news/canada-december-cpi-18-yy-versus-19-expected-20250121/\">CPI report</a> came mostly in line with forecasts showing once again\nthat the central bank got inflation back under control. </p><p>The CAD\nhasn’t responded much to economic data recently as the focus switched to\nTrump’s tariffs threats and\nthe negative economic impact they could have on Canada. Trump said that he\nintends to impose 25% tariffs on imports from Canada as soon as February 1st.\n</p><p>Despite the\ngeneral US Dollar weakness on tariffs optimism triggered by soft Trump’s\ncomments on China, the Canadian Dollar underperformed significantly its peers\nwith the USD/CAD rate remaining stuck in a roughly 150 pips range.</p><p>The Fed is\nexpected to keep interest rates unchanged at 4.25-4.50%. As a reminder,\nthe central bank cut interest rates by 25 bps at the last meeting in December\nraising growth and inflation projections and lowering the expected rate cuts in\n2025 from 100 bps to 50 bps (in line with market’s pricing at that time).</p><p>The central\nbank will likely stress the need to wait a bit more for the next rate cut to\nget more economic data and more clarity on Trump’s policies. As <a href=\"https://www.forexlive.com/news/feds-waller-will-support-further-cuts-in-2025-but-pace-will-depend-on-inflation-progress-20250108/\">Fed’s Waller</a> recently mentioned, the pace of rate cuts will\ndepend on inflation progress. He didn’t even rule out completely a <a href=\"https://www.forexlive.com/centralbank/fed-waller-december-inflation-data-was-very-good-20250116/\">March cut</a> which was taken as a dovish surprise by the market. </p><p>The recent US\ninflation data came in softer than expected and marked the peak in the\ninflation hysteria and the repricing in rate cuts expectations. Before the\ndata, the market was even pricing in the chances on no rate cuts in 2025. </p><p>That was the\nsignal that the pricing was getting too much aggressive and in fact we just\nneeded a couple of benign inflation reports to get it back to price in almost\ntwo rate cuts by the end of the year (which would be in line with the latest\nFed’s projections). </p><p>Overall, this\ndecision is unlikely to influence markets expectations too much as the data in\nQ1 is what really matters. Despite the expected cautiousness, a bit more\npositive talk on inflation could see the US Dollar weakening further (as\nlong as Trump doesn’t spoil the party). </p><p>Thursday</p><p>The ECB is\nexpected to cut interest rates by 25 bps and bring the policy rate to 2.75%.\nThe recent <a href=\"https://www.forexlive.com/news/eurozone-december-final-cpi-24-v-24-yy-prelim-20250117/\">Eurozone CPI</a> report showed core inflation remaining pretty\nsticky, especially on the services side. </p><p>Moreover, despite\nall the doom and gloom, the latest <a href=\"https://www.forexlive.com/news/eurozone-january-flash-services-pmi-514-vs-515-expected-20250124/\">Flash PMIs</a> showed a notable rebound in economic activity which might even get stronger if the Russia-Ukraine\nwar gets settled. </p><p>Also, <a href=\"https://www.reuters.com/world/europe/france-pushes-massive-pause-eu-red-tape-amid-us-pressure-2025-01-24/\">news on EU</a> to push AI, advanced research and clean tech in bid\nto compete with the US and China got louder with pressures to reduce and\nsimplify regulations and increase investment. The prospects of a great 2025 for\nthe Euro and European equities strengthen by the day. </p><p>The US Jobless\nClaims continue to be one of the most important releases to follow every week\nas it’s a timelier indicator on the state of the labour market. </p><p>Initial\nClaims remain inside the 200K-260K range created since 2022, while Continuing Claims continue to hover around\ncycle highs although we’ve seen some easing recently. </p><p>This week Initial\nClaims are expected at 220K vs. 223K prior, while there’s no consensus for Continuing\nClaims at the time of writing although the prior release showed an increase to\n1899K vs. 1853K prior.</p><p>Friday</p><p>The Tokyo Core CPI\nY/Y is expected at 2.5% vs. 2.4% prior. The BoJ hiked interest rates by 25 bps\nthe last week but didn’t offer anything in terms of forward guidance with Governor\nUeda saying that they have any preconceived idea and that they will make a\ndecision at each policy meeting by examining economic and price developments as\nwell as risks. The market doesn’t expect another rate hike any time soon\nwith the next one seen in October at the earliest. </p><p>The US PCE Y/Y is\nexpected at 2.6% vs. 2.4% prior, while the M/M measure is seen at 0.3% vs. 0.1%\nprior. The Core PCE Y/Y is expected at 2.8% vs. 2.8% prior, while the M/M\nfigure is seen at 0.2% vs. 0.1% prior. </p><p>Forecasters\ncan reliably estimate the PCE once the CPI and PPI are out, so the market\nalready knows what to expect. Therefore, unless we see a deviation from the expected numbers, it\nshouldn’t affect the current market’s pricing.</p><p>The US Q4\nEmployment Cost Index (ECI) is expected at 0.9% vs. 0.8% prior. This is the most\ncomprehensive measure of labour costs, but unfortunately, it’s not as\ntimely as the Average Hourly Earnings data. The Fed though watches this\nindicator closely. </p>\n\n                This article was written by Giuseppe Dellamotta at www.forexlive.com.",
+      "image_url": "https://images.forexlive.com/images/US%20Consumer%20Confidence_id_9683d4af-680c-45b0-9cd4-81b13e1cf004_size975.jpg"
+    },
+    {
+      "title": "What are the technicals driving the major US currency pairs heading into the new week",
+      "link": "https://www.forexlive.com/technical-analysis/what-are-the-technicals-driving-the-major-us-currency-pairs-heading-into-the-new-week-20250125/",
+      "date": "2025-01-25T15:51:28",
+      "description": "<p>EURUSD: The EURUSD stretched above a retracement (61.8% from the December high) /ceiling area today, increasing the bullish bias. That area came between 1.0448 and 1.0461.  That area will be a key barometer in the new trading week.  You can read the commentary <a href=\"https://www.forexlive.com/technical-analysis/eurusd-extends-to-new-highs-after-support-held-what-next-for-the-pair-20250124/\" rel=\"follow\" target=\"_blank\">HERE</a> and watch the detailed video below: </p><p>USDJPY:  The USDJPY remains in an up-and-down range over the last week and a half between 154.77 and 156.73.  Also in play at the lower end is the  38.2% retracement at 154.939.  The price briefly broke that key retracement but momentum to the downside faded fast.  You can read the commentary <a href=\"https://www.forexlive.com/technical-analysis/the-usdjpy-stays-in-an-up-and-down-range-that-leaves-the-door-open-for-a-break-and-run-20250124/\" rel=\"follow\" target=\"_blank\">HERE</a> and watch the detailed video below: </p><p>GBPUSD: The GBPUSD was the biggest mover on Friday with a run to the upside. That broke the pair past the 38.2% and the 50% retracement targets of the trend move lower from the December high at 1.23689 and 1.2453 respectively. You can read the commentary <a href=\"https://www.forexlive.com/technical-analysis/the-gbpusd-is-the-biggest-mover-today-with-the-run-to-the-upside-breaching-key-technicals-20250124/\" rel=\"follow\" target=\"_blank\">HERE </a>and watch the detailed video below:</p><p>USDCHF: The USDCHF tested but stayed below the 100 hour MA on Tuesday, extended above that 100 hour MA but stalled at the higher 200 hour MA and fell on Thursday, and extended to test the 100 hour MA on Friday, and stalled against that resistance level.  Sellers were leaning on rallies. What it did not do is extend below the 38.2% of the move up from the December low.  So buyer and sellers are battling it out. You can read the commentary <a href=\"https://www.forexlive.com/technical-analysis/the-usdchf-is-down-on-the-week-but-finds-support-at-the-382-retracement-20250124/\" rel=\"follow\" target=\"_blank\">HERE </a>and watch the detailed video below:</p><p>USDCAD: The USDCAD is in a wide up and down trading range between 1.42899 and 1.4466 (177 pips) going back to December 17. This week off of the inauguration volatility (and tariff stuff), the buyers had their shot on a break higher and failed, AND on a break lower, and also failed. The price is settling within the range but below 100 and 200 hour MAs giving a bearish tilt into the weekend.  You can read the commentary <a href=\"https://www.forexlive.com/technical-analysis/usdcad-remains-in-the-grasp-of-the-up-and-down-trading-range-this-week-20250124/\" rel=\"follow\" target=\"_blank\">HERE </a>and watch the video below:</p><p>AUDUSD: The AUDUSD extended above a ceiling area and the 38.2% of the move down from the November 25 high on Friday (between 0.62874 and 0.6306).  The corrective low on Friday found willing buyers against the high of that swing area.  The buyers are making a play. Can they keep it going next week.  You can read the commentary <a href=\"https://www.forexlive.com/technical-analysis/the-audusd-has-moved-above-a-key-swing-today-it-gives-buyers-some-control-into-new-week-20250124/\" rel=\"follow\" target=\"_blank\">HERE </a>and watch the video below:</p><p>NZDUSD: The NZDUSD extended above the 38.2% of the move down from the November 29 high and a swing area ceiling all between 0.5683 and 0.5691. The break is a tilt to the buyers/bulls heading into the new trading week.  Can the buyers keep the momentum going in the new trading week?  You can read the commentary <a href=\"https://www.forexlive.com/technical-analysis/the-nzdusd-breaks-above-382-retracement-what-does-it-mean-for-next-weeks-trading-20250124/\" rel=\"follow\" target=\"_blank\">HERE </a>and watch the video below:</p>\n\n                This article was written by Greg Michalowski at www.forexlive.com.",
+      "image_url": "https://images.forexlive.com/fl-static/fl-thumbnail.jpg"
+    },
+    {
+      "title": "Trump Pump & Dump",
+      "link": "https://www.forexlive.com/news/trump-pump-and-dump-complete-20250125/",
+      "date": "2025-01-25T11:51:56",
+      "description": "<p>Trump Coin (TRUMP/USDT): The Rise and Fall of a Meme Coin</p><p>In the unpredictable world of cryptocurrency, meme coins frequently make headlines with spectacular gains—followed by equally dramatic losses. </p><p>Trump mentioned (see in video below) that the launch of his Meme coin celebrated winning.</p><p>So far, it seems that he won, and buyers of this joke, lost. Ooops... You just got pumped and dumped.</p><p>Over the last six trading days, Trump Coin (TRUMP/USDT) exemplified this phenomenon, surging to a high of $96 before plummeting to its current price of $26.65, marking an over 70% decline. This kind of rapid rise and fall serves as a cautionary tale for crypto traders and investors.</p><p>The Pump and Dump of Trump Coin in Action</p><p>Trump Coin's price chart reveals a classic pump-and-dump pattern:</p><ol><li><p>Launch Hype and Early Surge:The token launched with overwhelming hype, driven by its association with a prominent figure, speculative buying, and exchange listings. Within hours, it soared to $96, fueled by FOMO (Fear of Missing Out).</p></li><li><p>The Crash:After the initial euphoria, the token began a sharp descent. Lower highs and lower lows became evident, signaling a lack of support and growing selling pressure. By January 25th, the price had settled at $26.65, erasing early gains.</p></li><li><p>Red Flags for Speculative Traders:</p><ul><li>Unstable Volume: Early spikes in trading volume suggest speculative activity, with large holders potentially unloading their positions.</li><li>Lack of Price Acceptance: The token failed to establish a support level at higher prices, indicating weak confidence among buyers.</li><li>No Clear Use Case: Like many meme coins, Trump Coin’s value was driven by sentiment rather than utility, making it prone to sudden crashes.</li></ul></li></ol><p>Key Tips for Buyers of the Next Meme Coin</p><p>As new meme coins emerge, crypto traders and investors should approach them with caution. Here are essential tips to avoid falling into the FOMO trap:</p><p>1. Patience Pays Off</p><ul><li>Avoid Jumping in Too Early: The initial phase of a meme coin’s lifecycle is often marked by extreme volatility. Prices are inflated by speculative buying, and latecomers often bear the brunt of the inevitable sell-off.</li><li>Wait for Price Action to Stabilize: Observe whether the coin finds acceptance at support levels. If prices consolidate at higher levels after the initial surge, it may indicate stronger buyer interest and reduce downside risks.</li></ul><p>2. Beware of FOMO</p><ul><li>Don't Be Swayed by Hype: Coins associated with big names or trending topics often ride a wave of publicity. While this can generate short-term gains, the hype is rarely sustainable.</li><li>Understand the Risks of Branding: Just because a token is linked to a well-known brand or figure (like Trump Coin) doesn’t mean it will hold its value. These coins are often driven by sentiment rather than fundamentals.</li></ul><p>3. Focus on Price Acceptance</p><ul><li>Look for Support Levels: A key sign of stability is the token’s ability to hold its value within key price zones. If the price keeps breaking through supports, it signals a lack of interest from buyers.</li><li>Volume and Buy-Side Activity: Watch for consistent buy-side activity and increasing trading volume at support levels, which indicate stronger market interest.</li></ul><p>4. Timing Is Everything</p><ul><li>Launch Buyers Have the Advantage: Those who buy at launch and exit quickly after a spike tend to profit most in these scenarios. If you miss the initial surge, wait for confirmation of price stability before entering.</li><li>Avoid the Mid-Hype Entry: Entering during the peak of FOMO is risky. Waiting for the hype to settle and assessing whether the coin is gaining genuine traction is a smarter approach.</li></ul><p>5. Research the Tokenomics</p><ul><li>Understand Supply Dynamics: Events like token unlocks can flood the market with supply, driving prices down. Know when these events are scheduled before committing funds.</li><li>Check for Utility: Meme coins with no clear use case or development roadmap are less likely to hold long-term value. Tokens with utility or innovative features have a better chance of sustaining their gains.</li></ul><p>6. Set Clear Risk Management Rules</p><ul><li>Use Stop-Loss Orders: Protect your investment by setting stop-loss orders to minimize losses in case the price falls unexpectedly.</li><li>Take Partial Profits: If you’ve profited from an early price surge, consider taking some money off the table to lock in gains.</li></ul><p>Final Thoughts on Trump Coin, FOMO, and Pump &amp; Dump</p><p>Trump Coin’s rapid rise and fall highlights the dangers of succumbing to FOMO and speculative hype. Meme coins may offer incredible opportunities for quick gains, but they are inherently high-risk. The lessons for traders are clear: be patient, watch for price acceptance at support levels, and avoid chasing unsustainable trends. Remember, timing and disciplined risk management are your best allies in the volatile world of cryptocurrencies.</p><p>As new meme coins inevitably enter the market, traders who stay calm, analyze price action, and resist the lure of FOMO will be better positioned to navigate these speculative waters and protect their capital. Always approach meme coins with a critical eye, and never invest more than you’re prepared to lose.</p><p>Be careful not to get pumped and dumped and visit <a href=\"https://www.forexlive.com/\" rel=\"follow\" target=\"_self\">ForexLive.com</a> for additional, original, authentic perspectives.</p>\n\n                This article was written by Itai Levitan at www.forexlive.com.",
+      "image_url": "https://images.forexlive.com/images/Trump%20coin%20on%20the%204%20hour%20chart%20-%20looks%20like%20a%20pump%20%26%20dump._id_3981e822-dccf-44a6-ae76-61c654cc8467_size975.jpg"
+    },
+    {
+      "title": "Did the US Secretary of State just cutoff aid to Ukraine?",
+      "link": "https://www.forexlive.com/news/did-the-us-secretary-of-state-just-cutoff-aid-to-ukraine-20250124/",
+      "date": "2025-01-24T23:15:24",
+      "description": "<p>Politico is out with a very interesting <a href=\"https://www.politico.com/news/2025/01/24/state-department-foreign-aid-pause-00200510\" rel=\"nofollow\" target=\"_blank\">report </a>after it obtained a report showing guidance from new Secretary of State Marco Rubio. It says that -- contrary to reports at the time -- that yestrday's executive order from Trump will cut off foreign aid to Ukraine.</p><blockquote class=\"story-text__paragraph text-align-left\">Secretary of State Marco Rubio halted spending Friday on most existing foreign aid grants for 90 days. The order, which shocked State Department officials, appears to apply to funding for military assistance to Ukraine.</blockquote><blockquote class=\"story-text__paragraph  \">Rubio’s guidance, issued to all diplomatic and consular posts, requires department staffers to issue “stop-work orders” on nearly all “existing foreign assistance awards,” according to the document, which was obtained by POLITICO. It is effective immediately.</blockquote><p>My guess here is that Politico got something wrong or there is some confusion at the State Dept because this goes directly against what they were saying.</p><blockquote>The new guidance means no further actions will be taken to disperse aid funding to programs already approved by the U.S. government, according to three current and two former officials familiar with the new guidance.</blockquote><p>Rubio has been a supporter of Ukraine and a hawk from the beginning so it would be an odd twist from him as well. That said, Trump lately has talked about pressuring Ukraine to accept some sort of peace.</p>\n\n                This article was written by Adam Button at www.forexlive.com.",
+      "image_url": "https://images.forexlive.com/images/Marco%20Rubio%20Secretary%20of%20State_id_323f17b9-a872-42ae-a2eb-6c342431c38d_size975.jpg"
+    },
+    {
+      "title": "Forexlive Americas FX news wrap 24 Jan: The USD moves lower after weaker data.",
+      "link": "https://www.forexlive.com/news/forexlive-americas-fx-news-wrap-24-jan-the-usd-moves-lower-after-weaker-data-20250124/",
+      "date": "2025-01-24T22:06:52",
+      "description": "<ul><li><a href=\"https://www.forexlive.com/news/earnings-for-the-week-starting-jan-27-led-by-tesla-meta-microsoft-and-apple-20250124/\">Earnings for the week starting Jan 27 led by Tesla, Meta, Microsoft and Apple</a></li><li><a href=\"https://www.forexlive.com/news/down-day-for-us-stocks-to-end-the-trading-week-20250124/\">Down day for US stocks to end the trading week. Major indices do close higher for the week</a></li><li><a href=\"https://www.forexlive.com/technical-analysis/us-crude-oil-futures-is-settling-7466-20250124/\">US crude oil futures is settling $74.66</a></li><li><a href=\"https://www.forexlive.com/news/whoever-figure-out-how-to-build-things-again-will-win-the-next-decade-in-markets-20250124/\">Whoever figure out how to build things again will win the next decade in markets</a></li><li><a href=\"https://www.forexlive.com/news/us-dollar-falls-further-after-troubling-services-pmi-report-pound-runs-20250124/\">US dollar falls further after troubling services PMI report. Pound runs</a></li><li><a href=\"https://www.forexlive.com/news/trump-repeats-that-he-wants-to-see-opec-cut-the-price-of-oil-20250124/\">Trump repeats that he wants to see OPEC cut the price of oil</a></li><li><a href=\"https://www.forexlive.com/news/us-december-existing-home-sales-424m-vs-419m-expected-20250124/\">US December existing home sales 4.24m vs 4.19m expected</a></li><li><a href=\"https://www.forexlive.com/news/university-of-michigan-sentiment-final-for-january-711-versus-732-estimate-20250124/\">University of Michigan sentiment final for January 71.1 versus 73.2 estimate</a></li><li><a href=\"https://www.forexlive.com/stock-market-update/tech-giants-oscillate-while-semiconductors-surge-a-closer-look-at-todays-market-shifts-20250124/\">Tech giants oscillate while semiconductors surge: A closer look at today's market shifts</a></li><li><a href=\"https://www.forexlive.com/news/us-january-sp-global-flash-services-pmi-528-vs-565-expected-20250124/\">US January S&amp;P Global flash services PMI 52.8 vs 56.5 expected</a></li><li><a href=\"https://www.forexlive.com/news/metas-zuckerberg-says-will-invest-60-65b-in-capex-this-year-20250124/\">Meta's Zuckerberg says will invest $60-$65B in capex this year</a></li><li><a href=\"https://www.forexlive.com/news/tass-there-is-no-objective-signs-that-ukraine-and-west-are-ready-for-peace-talks-20250124/\">Tass: There is no objective signs that Ukraine and west are ready for peace talks</a></li><li><a href=\"https://www.forexlive.com/news/trump-touted-a-big-corporate-tax-cut-yesterday-but-how-will-it-be-paid-for-20250124/\">Trump touted a big corporate tax cut yesterday, but how will it be paid for?</a></li><li><a href=\"https://www.forexlive.com/news/benchmark-revision-sees-288k-fewer-canadian-jobs-in-2024-softer-picture-late-in-the-year-20250124/\">Benchmark revision sees 28.8K fewer Canadian jobs in 2024, softer picture late in the year</a></li><li><a href=\"https://www.forexlive.com/news/canada-december-new-housing-price-index-01-vs-01-prior-20250124/\">Canada December new housing price index -0.1% vs +0.1% prior</a></li><li><a href=\"https://www.forexlive.com/technical-analysis/kickstart-the-fx-trading-day-for-jan-23-w-a-technical-look-at-the-3-major-currency-pairs-20250124/\">Kickstart the FX trading day for Jan 23, w/ a technical look at the 3 major currency pairs</a></li><li><a href=\"https://www.forexlive.com/news/forexlive-european-fx-news-wrap-dollar-stays-pressured-yen-slips-in-post-boj-trade-20250124/\">ForexLive European FX news wrap: Dollar stays pressured, yen slips in post-BOJ trade</a></li></ul><p>The US dollar is trading lower today as the S&amp;P PMI data and the Michigan consumer sentiment data came in lower than expectations.</p><p>Looking at the major currencies vs the greenback each rose (with the USD falling).  A snapshot of the dollar changes vs the currencies shows: </p><ul><li>EUR, -0.77%</li><li>JPY -0.08%</li><li>GBP, -1.08%</li><li>CHF -0.14%</li><li>CAD, -0.27%</li><li>AUD -0.48%</li><li>NZD -0.62%</li></ul><p>The GBPUSD was the biggest mover as it reacted to stronger UK PMI data before the weaker US data.  Some of the major currencies broke key technical levels. </p><ul><li>EURUSD moved above its 61.8% retracement of the move down form the December high at 1.0456.</li><li>GBPUSD moved above its 38.2% retracement of the move down from the December high at 1.23689, and the 50% midpoint at 1.2453.</li><li>NZDUSD moved above its 38.2% retracement of the move down from the end of November high at 0.5668</li><li>AUDUSD moved above its 38.2% retracement of the move down from the end of November high at 0.62902</li></ul><p>Staying above those levels next week will keep the buyersin the pairs (USD sellers) in play.</p><p>In the US stock market today, the major indices all closed lower a day after the S&amp;P closed at a new record level.  Today the S&amp;P reached a new intraday high but could not sustain the momentum. </p><p>A snapshot of the closing levels shows: </p><ul><li>Dow industrial average -140.82 points or -0.32% at 44,424.25</li><li>S&amp;P index -17.47 points -0.29% at 6100 124.</li><li>NASDAQ index -99.38 points -0.50% at 19,954.30.</li><li>Russell 2000-6.85 points or -0.30% at 2307.73.</li></ul><p>For the trading week, the major indices closed higher for the 2nd consecutive week:</p><ul><li>Dow industrial average rose 2.15%.</li><li>S&amp;P index rose 1.74%</li><li>NASDAQ index rose 1.65%.</li><li>Russell 2000 rose 1.399%</li></ul><p>US yields moved modestly lower today:</p><ul><li>2 year yield, 4.267%, -1.7 basis points</li><li>5-year yield 4.424%, -1.8 basis points</li><li>10-year yield 4.621%, -1.6 basis points</li><li>30 year yield 4.846%, -2.3 basis points</li></ul><p>For the trading week, the yields are ending near unchanged:</p><ul><li>2 year , -1.3 basis points</li><li>5 year, unchanged</li><li>10 year unchanged</li><li>30 year, -0.8 basis points</li></ul><p>The 2-10 year spread is at 35.1 basis points which is up 1.1 basis points on the week. The 2-30 year spread is at 57.8 basis points up 0.6 basis points. The spread is the widest since the March 7, 2022 trading week.</p><p>Next week will be a big week for earnings with four of the seven Magnificent 7 scheduled to announce. Tesla, Meta, and Microsoft will announce on January 29 after the close Apple will announce on January 30 also after the close.</p><p class=\"text-align-start vertical-align-baseline\">AT&amp;T, Boeing, GM, IBM, Visa, Exxon, and Chevron are also some of the large-cap names on the earnings calendar in the new trading week</p><p class=\"text-align-start vertical-align-baseline\">Thank you for your support this week. Wishing all a happy and healthy weekend. </p>\n\n                This article was written by Greg Michalowski at www.forexlive.com.",
+      "image_url": "https://images.forexlive.com/fl-static/fl-thumbnail.jpg"
+    },
+    {
+      "title": "Earnings for the week starting Jan 27 led by Tesla, Meta, Microsoft and Apple",
+      "link": "https://www.forexlive.com/news/earnings-for-the-week-starting-jan-27-led-by-tesla-meta-microsoft-and-apple-20250124/",
+      "date": "2025-01-24T21:30:57",
+      "description": "<p>The earnings for next week will heat up with 4 of the 7 Magnificent 7 scheduled to report.  Tesla, Meta, and Microsoft will all report: January 29 after the close. Apple will announce on January 30 also after the close. </p><p>AT&amp;T, Boeing, GM, IBM, Visa, Exxon, and Chevron are also some of the large-cap names on the earnings calendar. </p><p>Below is a list: </p><p>Monday, January 27</p><ul><li>Sofi</li><li>AT&amp;T</li></ul><p>Tuesday, January 28</p><ul><li>Boeing</li><li>GM</li><li>Lockheed Martin</li><li>Starbucks</li><li>SAP</li><li>Stryker</li></ul><p>Wednesday, January 29</p><ul><li>Progressive</li><li>T-Mobile</li><li>ADP</li><li>General Dynamics</li><li>Tesla</li><li>Meta</li><li>Microsoft</li><li>IBM</li><li>Lam Research</li><li>ServiceNow</li></ul><p>Thursday January 30 </p><ul><li>UPS</li><li>Mastercard</li><li>Dow</li><li>Nokia</li><li>Southweat</li><li>Caterpillar</li><li>Comcast</li><li>Apple</li><li>Intel</li><li>Visa</li></ul><p>Friday, January 31</p><ul><li>ExxonMobile</li><li>Chevron</li><li>Colgate-Palmolive</li><li>Phillips 66</li></ul>\n\n                This article was written by Greg Michalowski at www.forexlive.com.",
+      "image_url": "https://images.forexlive.com/fl-static/fl-thumbnail.jpg"
+    },
+    {
+      "title": "Down day for US stocks to end the trading week. Major indices do close higher for the week",
+      "link": "https://www.forexlive.com/news/down-day-for-us-stocks-to-end-the-trading-week-20250124/",
+      "date": "2025-01-24T21:26:46",
+      "description": "<p>A day after the S&amp;P index closed at a new record level, a new intraday high was made at 6128.18, but momentum could not be sustained in the price closed lower on the day. The NASDAQ, Dow industrial average and Russell 2000 also closed lower. A snapshot of the close shows:</p><ul><li>Dow industrial average -140.82 points or -0.32% at 44,424.25</li><li>S&amp;P index -17.47 points -0.29% at 6100 124.</li><li>NASDAQ index -99.38 points -0.50% at 19,954.30.</li><li>Russell 2000-6.85 points or -0.30% at 2307.73.</li></ul><p>For the trading week, the major indices closed higher for the 2nd consecutive week:</p><ul><li>Dow industrial average rose 2.15%.</li><li>S&amp;P index rose 1.74%</li><li>NASDAQ index rose 1.65%.</li><li>Russell 2000 rose 1.399%</li></ul><p>Next week earnings from some of the Magnificent Seven will be reported: </p><ul><li>January 29 Tesla, Microsoft and Meta</li><li>January 30 Apple</li></ul><p>Alphabet will release their earnings on Tuesday, February 4 and Amazon on Thursday, February 6. Nvidia release until Wednesday, February 26.</p><p>A look at the other key earnings scheduled for next week:</p><p>Monday, January 27</p><ul><li>Sofi</li><li>AT&amp;T</li></ul><p>Tuesday, January 28</p><ul><li>Boeing</li><li>GM</li><li>Lockheed Martin</li><li>Starbucks</li><li>SAP</li><li>Stryker</li></ul><p>Wednesday, January 29</p><ul><li>Progressive</li><li>T-Mobile</li><li>ADP</li><li>General Dynamics</li><li>Tesla</li><li>Meta</li><li>Microsoft</li><li>IBM</li><li>Lam Research</li><li>ServiceNow</li></ul><p>Thursday January 30 </p><ul><li>UPS</li><li>Mastercard</li><li>Dow</li><li>Nokia</li><li>Southweat</li><li>Caterpillar</li><li>Comcast</li><li>Apple</li><li>Intel</li><li>Visa</li></ul><p>Friday, January 31</p><ul><li>ExxonMobile</li><li>Chevron</li><li>Colgate-Palmolive</li><li>Phillips 66</li></ul>\n\n                This article was written by Greg Michalowski at www.forexlive.com.",
+      "image_url": "https://images.forexlive.com/fl-static/fl-thumbnail.jpg"
+    },
+    {
+      "title": "The USDJPY stays in an up and down range. That leaves the door open for a break and run.",
+      "link": "https://www.forexlive.com/technical-analysis/the-usdjpy-stays-in-an-up-and-down-range-that-leaves-the-door-open-for-a-break-and-run-20250124/",
+      "date": "2025-01-24T21:05:27",
+      "description": "<p>The video above outlines the key technical levels for the USDJPY going into the new trading week. </p><p>The recent swing highs and swing lows between 154.77 up to 156.73 will be the extremes that will need to be broken to either increase the bullish bias or increase the bearish bias.  </p>\n\n                This article was written by Greg Michalowski at www.forexlive.com.",
+      "image_url": "https://images.forexlive.com/images/USDJPY_id_94d1f675-c803-4306-aa7c-a2dabc663884_size975.jpg"
+    },
+    {
+      "title": "The GBPUSD is the biggest mover today with the run to the upside breaching key technicals",
+      "link": "https://www.forexlive.com/technical-analysis/the-gbpusd-is-the-biggest-mover-today-with-the-run-to-the-upside-breaching-key-technicals-20250124/",
+      "date": "2025-01-24T20:30:51",
+      "description": "<p>The GBPUSD is the biggest mover today with a run to the upside of above 1% on the day. Better PMI data for manufacturing and services gave the pair a shove to the upside. Technical breaks were a tailwind for the move as well.</p><p>Technically, the run higher saw the pair move above a swing area and swing area between 1.23515 and 1.2375.  After correcting to the high of that area and finding willing buyers, the upside was greenlighted and momentum increased. </p><p>The subsequent move higher saw the 50% of the move down from the December high at 1.2453 was tested and then broken, The 200 bar MA on the 4-hour chart at 1.2472 was also broken, but resistance at a topside channel trend line and high of a swing area near the 1.2500 level has given buyers some cause for pause. </p><p>In the new trading week, the 50% level at 1.2453 will be eyed as close support. Staying above is more bullish. Moving below and there could be some further downside probing on the disappointment from the break.  </p><p>Find out more by watching the above video.  </p>\n\n                This article was written by Greg Michalowski at www.forexlive.com.",
+      "image_url": "https://images.forexlive.com/images/GBPUSD_id_61f07711-a16c-48b8-b8c2-79f9830ee26e_size975.jpg"
+    },
+    {
+      "title": "US crude oil futures is settling $74.66",
+      "link": "https://www.forexlive.com/technical-analysis/us-crude-oil-futures-is-settling-7466-20250124/",
+      "date": "2025-01-24T19:39:44",
+      "description": "<p>The price of WTI crude oil futures are selling at $74.66. That's up a modest 4 cents or 0.05%..</p><p>Looking at the daily chart, the price is settling below its 200 day moving average for the second day in a row at $74.71. For the trading week the race is down -3.58% as Pres. Trump started his 2nd term with the promise to drill, drill, drill and lower the price of energy.</p>\n\n                This article was written by Greg Michalowski at www.forexlive.com.",
+      "image_url": "https://images.forexlive.com/images/Oil_id_0d97b24d-e22f-45ab-906b-837e1ab94a68_size975.jpg"
+    },
+    {
+      "title": "Looking like NO record close in the S&P today or the NASDAQ index",
+      "link": "https://www.forexlive.com/news/looking-like-a-record-close-in-the-sp-today-were-nasdaq-index-20250124/",
+      "date": "2025-01-24T19:23:27",
+      "description": "<p>The S&amp;P index closed at a record level yesterday, and today the intraday high made a new record at 6128.18. However gains have not been sustained, and the major indices are all trading down on the day.</p><p>A snapshot of the current market shows:</p><ul><li>Dow industrial average is down -173 points or -0.39% at 44,391.70</li><li>S&amp;P index is down -27.18 points or 0.44% at 6091.85</li><li>NASDAQ index is down -136.11 points or 0.67% at 19617</li></ul><p>The record in the NASDAQ index is at 20173.89. The high price today reached 20118.61 – within 55 points of the record.</p><p>Given the current market, it does not seem any records will not be made today. There still is an hour and 1/2 left in trading but the bias seems to favor some profit-taking going into the weekend.</p>\n\n                This article was written by Greg Michalowski at www.forexlive.com.",
+      "image_url": "https://images.forexlive.com/fl-static/fl-thumbnail.jpg"
+    },
+    {
+      "title": "The AUDUSD has moved above a key swing today & it gives buyers some control into new week.",
+      "link": "https://www.forexlive.com/technical-analysis/the-audusd-has-moved-above-a-key-swing-today-it-gives-buyers-some-control-into-new-week-20250124/",
+      "date": "2025-01-24T18:50:26",
+      "description": "<p>In trading today, the price of the AUDUSD moved above the 38.2% of the move down from the end of November high at 0.6290 along with the swing area between 0.6287 and 0.63016.  The break is more bullish. </p><p>Moreover, the price correction in the early US trading today, fell and tested the high of that swing area. Holding that level and swing area (see the red numbered circle on the chart below) keeps the buyer in play, and gives sellers some cause for pause, at least in the short term. </p><p>Now there is work to do to take back more control. </p><p>Looking at the daily chart below, the old floor going back to the end of 2023 and to December of 2024 is a key target next week that if broken would add to the bullish bias.  That area comes between 0.6334 and 0.6363 (see red circles on the chart below).  </p><p>All is outline in the video above.   Be aware. Be prepared. </p>\n\n                This article was written by Greg Michalowski at www.forexlive.com.",
+      "image_url": "https://images.forexlive.com/images/audusd_id_a87f1bfc-b70d-41cf-9cc9-33f0273d524e_size975.jpg"
+    },
+    {
+      "title": "Whoever figure out how to build things again will win the next decade in markets",
+      "link": "https://www.forexlive.com/news/whoever-figure-out-how-to-build-things-again-will-win-the-next-decade-in-markets-20250124/",
+      "date": "2025-01-24T18:23:21",
+      "description": "<p>If I had a simple thesis for a trade for the next decade in the foreign exchange market it would be this: Invest in which ever country makes it easy to build again.</p><p>I spent last week in Dubai and it was amazing. Twenty-five years ago there was hardly anything there and it boast innumerable skyscrapers, highways, a metro train and some of the most-incredible projects in the world. China has done the same thing in dozens of cities and throughout the country.</p><p>Meanwhile, the developed world stagnates in endless bureaucracy whenever anyone tries to build something, particularly infrastructure. If it gets built, the costs dwarf those elsewhere. It wasn't always this way but it's gone way too far and I believe the mood is changing; environmental concerns are going on the backburner.</p><p>Take Mark Carney, who I think will be the next Prime Minister of Canada (though probably only for about six weeks as an election will immediately be called). He's trying to tap into that spirit in his campaign launch for party leadership.</p><p>Now I don't think he's hitting those notes particularly well but it's early days in the contest that will run through March. If he goes hard on that theme, I think it resonates.</p><p>\"Good governments empower their citizens to build great things,\" Carney says in his campaign ad.</p><p>I think it resonates everywhere but the problem is that the bureaucracy and courts are so dug in that's it's extremely difficult to change. Canada's system shares power federally, provincially, municipally and increasingly with the indigenous population. That's paralyzed the country and led to a $7 billion pipeline to the west coast ballooning in cost to $35 billion.</p><p>It's a similar story elsewhere in the developed world and often in the developing world where mines now take upwards of 10 years to be built.</p><p>So who wins? </p><p>It's tough to bet against the United States. Trump is already trying to use his emergency power for approvals and there are many states on board. The US does have high labor costs though and real estate is expensive but US pockets are deep so higher costs can be tolerated better than elsewhere. The Keystone XL pipeline shows all the ways that building can be obstructed.</p><p>I think the mood in the UK is strong around this and I'm hopeful they can move more-quickly on nuclear, for starters. What's problematic is that London is such a big part of the economy and there certainly isn't a consensus to start bulldozing neighbourhoods for infrastructure.</p><p>Australia is a decent spot for mining so they have at least that going for it. They've managed to get into the LNG game and the proximity to Asia has been beneficial. Real estate is terribly expensive though.</p><p>Europe might be the biggest opportunity but it's fragmented. It would be great if someone there could break away and really set a tone. Germans are some of the greatest builders but they've fallen so far behind and France is France. Is Italy having any success with a new government?</p><p>I don't have answers at the moment but I would love to see one of these places really go for it -- maybe build a planned city or some massive projects. I'd be a buyer of that but for now I'm a watcher.</p>\n\n                This article was written by Adam Button at www.forexlive.com.",
+      "image_url": "https://images.forexlive.com/images/Dubai_id_7d3b89c4-9285-4e2e-9d11-f8bb4b6ef208_size975.jpg"
+    },
+    {
+      "title": "The NZDUSD breaks above 38.2% retracement. What does it mean for next week's trading.",
+      "link": "https://www.forexlive.com/technical-analysis/the-nzdusd-breaks-above-382-retracement-what-does-it-mean-for-next-weeks-trading-20250124/",
+      "date": "2025-01-24T18:08:57",
+      "description": "<p>The NZDUSD has made a break to the upside and in doing so, extended above a swing area between 0.5683 to 0.5691.  Within that ceiling area, sits the 38.2% retracement of the move down from the end of November high.  That shows that the buyers are looking to take more control.  </p><p>Can the buyers keep that momentum going into the new trading week and during next week's trading. That will be a key area for me to stay above. If the price moves back below, the risk is that the buyers on the break area disappointed, and they give up on the break.  </p><p>When the markets trend like they have in the NZDUSD, reversing the trend is hard, but there are clues from the shift. It does not mean that the gains are forever, but buyers are taking back some control.  </p><p>There is work to do, and in the video I outline the next targets and explain why, but buyers are making a play. </p>\n\n                This article was written by Greg Michalowski at www.forexlive.com.",
+      "image_url": "https://images.forexlive.com/images/nzdusd_id_6c68d648-6361-403b-b3fd-c916a3bd4f3c_size975.jpg"
+    },
+    {
+      "title": "US dollar falls further after troubling services PMI report. Pound runs",
+      "link": "https://www.forexlive.com/news/us-dollar-falls-further-after-troubling-services-pmi-report-pound-runs-20250124/",
+      "date": "2025-01-24T17:06:16",
+      "description": "<p>Today's price action highlights how fragile the US dollar is.</p><p>There is no doubt that it's a crowded trade and anytime a trade gets overcrowded everything needs go perfectly to keep it going. Today there was a pair of economic data releases that were far-from-perfect. The S&amp;P Global services PMI fell to the lowest since April and the UMich consumer confidence survey was revised lower.</p><p>At the same time, the PMIs out of the eurozone and UK were better than expected.</p><p>That's been enough to launch a 140-pip squeeze higher in cable to 1.2490. So far offers at 1.2500 are holding but it's been a big move that builds off a similar-sized pop last week.</p><p>Another notable call today (though it goes against the idea of this being an extremely-contrarian trade) came from Blackrock's Larry Fink who <a href=\"https://www.reuters.com/business/finance/davos-blackrocks-fink-says-probably-time-be-investing-back-europe-2025-01-24/\" rel=\"nofollow\" target=\"_blank\">said </a>there is too much pessimism around Europe and it could be time to be investing again.</p><p>Similarly, Christine Lagarde said this:</p><blockquote>\"If European leaders can get their act together and respond to this \nexistential threat, there is a huge potential for Europe to respond to \nthe call,\" she said.</blockquote><p>That is certainty a tall order given Europe's bureaucracy but it's an opportunity.</p><p>I believe that the best place to invest in the developed world for the next decade will be whatever country figures out how to build things again. There is a growing consensus that the red tape is unbearable but solving it is no easy feat.</p>\n\n                This article was written by Adam Button at www.forexlive.com.",
+      "image_url": "https://images.forexlive.com/images/GBPUSD%20daily%20chart_id_83e9642c-b292-41aa-bc3d-3316d89545c4_size975.jpg"
+    },
+    {
+      "title": "EURUSD extends to new highs after support held. What next for the pair?",
+      "link": "https://www.forexlive.com/technical-analysis/eurusd-extends-to-new-highs-after-support-held-what-next-for-the-pair-20250124/",
+      "date": "2025-01-24T16:52:11",
+      "description": "<p>Earlier today, <a href=\"https://www.forexlive.com/technical-analysis/kickstart-the-fx-trading-day-for-jan-23-w-a-technical-look-at-the-3-major-currency-pairs-20250124/\" rel=\"follow\" target=\"_blank\">I posted and talked about the EURUSD technicals</a>.  I wrote:</p><ul class=\"text-align-start vertical-align-baseline\"><li class=\"vertical-align-baseline\">The EURUSD broke higher today with a move above a swing area between 1.0448 and 1.0461 and the 61.8% of the move down from the December high (at 1.0456). Going forward, staying above that area is more bullish. ON the topside, there is a swing area between 1.0532 to 1.0543.</li></ul><p>The price in the US morning session corrected lower, BUT it did find support buyers near the high of the swing area at 1.0461. The low price fell to a low of 1.0466 and bounced.  Bulls and buyers are in control.  Dip buyers leaned against the break point. </p><p>What now? What next going into the close and into the new week?</p><p>On the downside, the story remains the same with the 1.0448 to 1.0461 is the key level. Move below, and I would expect buyers turn to sellers on the disappointment from the break. </p><p>Stay above the breakpoint at 1.0448 to 1.0461 and the topside can be further explored/probed.</p><p>The next target (as outlined in the earlier post) is at 1.05325 to 1.05433. Move above that, and 1.05926 to 1.0609 will be targeted followed by the December high at 1.06293. Get above that, and the 100 day MA is at 1.06952 as is the 50% midpoint of the move down from the EURUSD 2024 high to the low reached in January.   Put a star on your chart at that area.</p><p>Next week, the ECB and the Fed both meet. The expectation is that the Fed remains unchanged and the ECB is expecte to cut. That should weaken the EURUSD. That should keep a lid on the pair.  So sellers may look at 1.0532 to 1.0543 for a place to sell with stops above.  </p><p>However, stories can change. </p><ul><li>Waller last week was more dovish.  </li><li>Trump has demanded lower rates.  </li></ul><p>Much is dependent on inflation and growth. Trump says he will bring it down. Will the promises lead to results, in which case the dollar may continue the move lower. The technicals help to provide the clues to the markets bias shifts.   </p>\n\n                This article was written by Greg Michalowski at www.forexlive.com.",
+      "image_url": "https://images.forexlive.com/images/EURUSD_id_ba0285ac-9217-47f8-a35d-fe896db5f08b_size975.jpg"
+    },
+    {
+      "title": "Trump repeats that he wants to see OPEC cut the price of oil",
+      "link": "https://www.forexlive.com/news/trump-repeats-that-he-wants-to-see-opec-cut-the-price-of-oil-20250124/",
+      "date": "2025-01-24T16:19:53",
+      "description": "<p>No one has ever accused the oil market of being full of the smartest traders.</p><p>Trump said the same thing yesterday and oil fell $1.50. He said the same thing dozens of times during his first term. There's no evidence anywhere that he's capable of dictating OPEC policy.</p><p>Even more importantly, does he even realize that Russia is in OPEC+?</p>\n\n                This article was written by Adam Button at www.forexlive.com.",
+      "image_url": "https://images.forexlive.com/images/Trump%20signing_id_3045b8d6-2b95-4080-b029-7be59afd5041_size975.jpg"
+    },
+    {
+      "title": "USDCAD remains in the grasp of the up and down trading range this week.",
+      "link": "https://www.forexlive.com/technical-analysis/usdcad-remains-in-the-grasp-of-the-up-and-down-trading-range-this-week-20250124/",
+      "date": "2025-01-24T15:58:02",
+      "description": "<p>This week, the buyers in the USDCAD had their shot on a break to the upside. THey missed.</p><p>THe sellers had their short on a break to the downside. They missed.</p><p>The breaks up-and-down took the price of the pair outline a Red Box that is between 1.42899 and 1.4466. That Red Box was started way back on on December 17th.</p><p>Today, the price has dipped back below the 100 and 200 hour MAs which are between the Red Box limits.  Those MAs have started to turn more to the downside which is a bearish tilt. Staying below those MAs is more bearish.  </p><p>On the downside, the price needs to get below the low of the Red Box at 1.42899. That is also home to the 38.2% retracement of the move up from the November 25 low.  If broken, there should be more downside momentum. </p><p>On the topside, a move back above the 100/200 hour MA, shifts the bias back in favor of the buyers with the high of the Red Box, the key target.</p><p>At some point, the market will get outside of the range. The price does not stay in at 177 pip trading range forever.  However, what is familiar also gives traders something to lean against for low risk trades.  So watch the extremes. Watch the midpoint MAs for clues.  And anticipate a break and run at some point. </p>\n\n                This article was written by Greg Michalowski at www.forexlive.com.",
+      "image_url": "https://images.forexlive.com/images/USDCAD_id_7191629a-6aa8-4675-9adc-f9790e2a2684_size975.jpg"
+    },
+    {
+      "title": "US dollar dips after softer services PMI, declining comsumer sentiment",
+      "link": "https://www.forexlive.com/news/us-dollar-dips-after-softer-services-pmi-declining-comsumer-sentiment-20250124/",
+      "date": "2025-01-24T15:20:02",
+      "description": "<p>Bank of America highlighted how crowded the USD trade was in its latest fund manager survey and Europe is universally hated so today's PMIs from S&amp;P Global have surprised the market.</p><p>The European numbers beat estimates while the<a href=\"https://www.forexlive.com/news/us-january-sp-global-flash-services-pmi-528-vs-565-expected-20250124/\" rel=\"follow\" target=\"_blank\"> US services survey </a>surprisingly slumped to the lowest since April. The reading of business sentiment fell to 52.8 from 56.5 while the <a href=\"https://www.forexlive.com/news/university-of-michigan-sentiment-final-for-january-711-versus-732-estimate-20250124/\" rel=\"follow\" target=\"_blank\">reading </a>of consumer sentiment from the University of Michigan was revised to 71.1 from 73.2.</p><p>The euro neared a session high after the release but wasn't quite able to crack the top. It remains up 81 pips to 1.0499.</p><p>The pound, however, was able to make a new high and is up 100 pips to 1.2451.</p><p>I think most of these moves are about Trump's toned-down rhetoric on tariffs but they also highlight a dangerously-crowded USD trade.</p>\n\n                This article was written by Adam Button at www.forexlive.com.",
+      "image_url": "https://images.forexlive.com/images/BofA%20survey_id_acee167a-63ae-4163-a32a-f71dc87f6763_size975.jpg"
+    },
+    {
+      "title": "TradeCompass for Tesla Stock",
+      "link": "https://www.forexlive.com/technical-analysis/tradecompass-for-tesla-stock-20250124/",
+      "date": "2025-01-24T15:07:13",
+      "description": "<p>TradeCompass for Tesla Stock</p><p>Current Price: $417.00 (at the time of this analysis)Bearish Threshold: $415.28Bullish Threshold: $421.75</p><p>Directional Bias: The tendency leans bearish. While Tesla hovers near a key inflection point, it requires confirmation to determine sustained movement.</p><p>Bearish Outlook:</p><p>Below $415.28, Tesla could face increased selling pressure. Here are the bearish profit targets:</p><ol><li>$413.15 – Just above the Value Area High (VAH) of yesterday.</li><li>$410.19 – Above the Value Area Low (VAL) of yesterday.</li><li>$406.86 – near the 2nd lower std dev of the VWAP of 21 Jan</li><li>$400.55 – A deeper bearish extension.</li></ol><p>Bullish Outlook:</p><p>Above $421.75, Tesla exhibits potential for an upside breakout. Here are the bullish profit targets:</p><ol><li>$423.69 – Close to the Point of Control (POC) from three days ago; a quick initial target.</li><li>$428.02 – Reflecting further bullish momentum.</li><li>$433.82 – Third Upper Standard Deviation of VWAP from three days ago; a strong stretch target.</li></ol><p>Trade Notes:</p><ul><li>Tesla’s setup suggests a high likelihood of directionality near the key levels of $415.28 and $421.75.</li><li>Use these levels as your “compass” for identifying shifts in sentiment and potential entries.</li></ul><p>Trade Tesla at your own risk. Thank you.</p>\n\n                This article was written by Itai Levitan at www.forexlive.com.",
+      "image_url": "https://images.forexlive.com/fl-static/fl-thumbnail.jpg"
+    },
+    {
+      "title": "US December existing home sales 4.24m vs 4.19m expected",
+      "link": "https://www.forexlive.com/news/us-december-existing-home-sales-424m-vs-419m-expected-20250124/",
+      "date": "2025-01-24T15:00:49",
+      "description": "<ul><li>Prior was 4.15m (revised to 4.19m)</li><li>Sales up 2.2% vs +4.8% prior</li><li> Strongest pace since February 2024 </li><li>Sales grew 9.3% from one year ago but despite that 2024 annual sales fell to the lowest in nearly 30 years</li><li>Median prices +6.0% y/y</li><li>Inventory at 3.3 months vs 3.8 months prior</li><li>Inventory for sale +16.2% y/y</li></ul><p>There is some momentum here but I expect it's going to run into the reality of high mortgage rates.</p>\n\n                This article was written by Adam Button at www.forexlive.com.",
+      "image_url": "https://images.forexlive.com/images/new%20home%20sales_id_a0331cf0-21d5-4b8d-9016-04021c412fae_size975.jpg"
+    },
+    {
+      "title": "University of Michigan sentiment final for January 71.1 versus 73.2 estimate",
+      "link": "https://www.forexlive.com/news/university-of-michigan-sentiment-final-for-january-711-versus-732-estimate-20250124/",
+      "date": "2025-01-24T15:00:12",
+      "description": "<ul><li>Prior month 74.0</li><li>Univ Michigan sentiment 71.1 versus 73.2 estimate. Weakest level since October of last year</li><li>Current conditions 74.0 versus 77.9 preliminary and 75.1 prior month. Weakest since November last year</li><li>Expectations 69.3 versus 70.2 point preliminary and 73.3 prior month. Weakest since July of last year</li><li>1 year inflation 3.3% versus 3.3% preliminary and 2.8% prior month. Highest since November 2023</li><li>5 year inflation 3.2% versus 3.3% preliminary and 3.0% month</li></ul><p>The table above shows the year on year change for the survey results.  The sentiment is lower. Much may have been politically motivated. What is interesting is the dip post the election result. </p><p>The chart below outlines inflation expectations.  </p><p>Ironically, those that see higher tears being better for the economy also see higher tariffs leading to lower inflation, while those that think that lower tariffs are better for the economy, expect higher inflation.</p><p>Most economists expect that higher tears would lead to higher inflation and vice versa.</p>\n\n                This article was written by Greg Michalowski at www.forexlive.com.",
+      "image_url": "https://images.forexlive.com/images/Michigan_id_b89e9446-1db1-4ad5-a855-27e2b443185b_size975.jpg"
+    },
+    {
+      "title": "Tech giants oscillate while semiconductors surge: A closer look at today's market shifts",
+      "link": "https://www.forexlive.com/stock-market-update/tech-giants-oscillate-while-semiconductors-surge-a-closer-look-at-todays-market-shifts-20250124/",
+      "date": "2025-01-24T14:46:32",
+      "description": "<p>Sector Overview</p><p>Today's stock market heatmap reveals a day of varied performances across sectors, with some noteworthy movements that investors should consider. Technology is witnessing mixed results: while Microsoft (MSFT) has fallen by 1.01%, semiconductor firms like Nvidia (NVDA) have registered gains of 0.58%, and Broadcom (AVGO) surged by 1.44%, illustrating strength in certain subsectors.</p><p>Consumer Electronics appears steady as Apple (AAPL) shows an increase of 0.58%, indicating potential investor confidence and stability in this space. Meanwhile, the Consumer Cyclical sector remains subdued with Amazon (AMZN) barely moving at -0.07%.</p><p>Communication Services is seeing some buoyancy with Google (GOOG) rising by 0.44%, reflecting positive investor sentiment towards internet-related services.</p><p>In the Healthcare space, healthcare plans firm Johnson & Johnson (JNJ) sees a slight rise of 0.51%, suggesting moderate confidence in health-related investments today.</p><p>Market Mood and Trends</p><p>The overall market sentiment today seems cautious with sectors fluctuating sharply, reflecting underlying economic uncertainties. The strong performance in semiconductors and selective strength in consumer electronics and communication services are offset by significant declines in certain technology stocks.</p><p>Strategic Recommendations</p><p>Given today's mixed signals, investors might consider a diversified approach, particularly in tech and communication services, to hedge against volatility. It's wise to keep an eye on semiconductor stocks, as their current momentum could signal sustained growth opportunities.</p><p>Moreover, stay agile by monitoring sectors affected by economic news, particularly in technology where shifts can be rapid. For those looking to safeguard against downturns, maintaining a presence in stable sectors such as healthcare could be prudent.</p><p>Follow real-time data and analysis at <a href=\"https://www.forexlive.com\">ForexLive.com</a> to keep abreast of developments and strategize effectively in this dynamically changing environment. 📊</p>\n\n                This article was written by Itai Levitan at www.forexlive.com.",
+      "image_url": "https://images.forexlive.com/images/Stock%20heatmap%20by%20FinViz.com%202025_01_24T02_46_13_id_5c41264d-7e37-413a-9339-5ad4109adeb6_size975.jpeg"
+    },
+    {
+      "title": "US January S&P Global flash services PMI 52.8 vs 56.5 expected",
+      "link": "https://www.forexlive.com/news/us-january-sp-global-flash-services-pmi-528-vs-565-expected-20250124/",
+      "date": "2025-01-24T14:45:13",
+      "description": "<ul><li>Lowest services reading since April</li><li><a href=\"https://www.forexlive.com/news/us-december-sp-global-final-services-pmi-568-vs-585-prelim-20250106/\" rel=\"follow\" target=\"_blank\">Prior </a>was 56.8</li><li>Manufacturing 50.1 vs 49.7 expected</li><li>Prior manufacturing was 49.4</li><li>Composite PMI 52.4 vs 55.4 prior</li><li>Service sector future confidence lost some of the shine from\nDecember's one-and-a-half year high, but remained the\nsecond-highest recorded over the past year</li><li>Service sector jobs were added at the sharpest\nrate for 30 months</li><li> Composite input costs and average selling prices rose at the fastest rates\nfor four months</li></ul><p>The PMIs out of Europe today were stronger, helping to boost the euro and pound. For the US, that's a fairly big drop and kocks it back to Q2 levels. It also runs against the market narrative of a post-election sentiment boom. There is some commentary about tariffs in the report.</p><p>Commenting on the flash PMI data, Chris Williamson, Chief\nBusiness Economist at S&amp;P Global Market Intelligence said:\n</p><blockquote>“US businesses are starting 2025 in an upbeat mood on hopes\nthat the new administration will help drive stronger economic\ngrowth. Rising optimism is most notable in the manufacturing\nsector, where expectations of growth over the coming year\nhave surged higher as factories await support from the new\npolicies of the Trump administration, though service providers\nare also entering 2025 in good spirits.\n</blockquote><blockquote>\"Although output growth slowed slightly in January, sustained\nconfidence suggests that this slowdown might be short-lived.\nEspecially encouraging is the upturn in hiring that has been\nfueled by the improved business outlook, with jobs being\ncreated at a rate not seen for two-and-a-half years.\n</blockquote><blockquote>\"However, rising price pressures are a concern, with companies\nreporting supplier-driven price hikes as well as wage growth\namid poor staff availability. Higher input cost and selling price\ninflation was broad-based across goods and services and, if\nsustained, could add to worries that a combination of robust\neconomic growth, a strong job market, and higher inflation\ncould encourage a more hawkish policy approach from the\nFed.\"</blockquote><p>The chart shows a visible uptick in inflation but it's still far below 2021-2023 levels.</p>\n\n                This article was written by Adam Button at www.forexlive.com.",
+      "image_url": "https://images.forexlive.com/images/US%20PMI_id_0fd383c6-ef9d-4d01-af89-2e1d0804bed4_size975.jpg"
+    },
+    {
+      "title": "‘Her crooked son has taken everything’: My fiancé’s 100-year-old aunt was swindled out of $100,000. How can we help?",
+      "link": "https://www.marketwatch.com/story/her-crooked-son-has-taken-everything-my-fiances-100-year-old-aunt-was-swindled-out-of-100-000-how-can-we-help-5a57963f?mod=mw_rss_topstories",
+      "date": "2025-01-26T00:36:00",
+      "description": "“Her son threatened to put her in a nursing home if she didn’t send his check by Friday.”",
+      "image_url": "https://images.mktw.net/im-96218825"
+    },
+    {
+      "title": "‘I trust that my husband isn’t a gold digger’: I’m inheriting millions of dollars. My husband says I’m ‘selfish’ to keep it. Should I share it?",
+      "link": "https://www.marketwatch.com/story/i-trust-that-my-husband-isnt-a-gold-digger-im-inheriting-millions-of-dollars-my-husband-says-im-selfish-to-keep-it-should-i-share-it-3ffffdd7?mod=mw_rss_topstories",
+      "date": "2025-01-25T19:39:00",
+      "description": "“I have been a stay-at-home mom for the past five years and my husband is the sole breadwinner.”",
+      "image_url": "https://images.mktw.net/im-01552060"
+    },
+    {
+      "title": "My sister made frequent withdrawals from the ‘bank of Mom and Dad.’ Now our family is torn apart. What can I do?",
+      "link": "https://www.marketwatch.com/story/my-sister-made-frequent-withdrawals-from-the-bank-of-mom-and-dad-now-our-family-is-torn-apart-what-can-i-do-b2f9a8f2?mod=mw_rss_topstories",
+      "date": "2025-01-25T18:41:00",
+      "description": "“My sister did nothing because she was a girl, and my brother was too young to help.”",
+      "image_url": "https://images.mktw.net/im-42097306"
+    },
+    {
+      "title": "‘I paid for everything from day one’: My husband barely worked during our marriage. Can I leave my $500,000 IRA to my son?",
+      "link": "https://www.marketwatch.com/story/i-paid-for-everything-from-day-one-my-husband-barely-worked-during-our-marriage-can-i-leave-my-500k-ira-to-my-son-from-a-previous-marriage-9d329644?mod=mw_rss_topstories",
+      "date": "2025-01-25T18:31:00",
+      "description": "‘I do not want my husband to be able to come back to my son and claim the money’",
+      "image_url": "https://images.mktw.net/im-76626389"
+    },
+    {
+      "title": "‘My retirement is going to be a disaster’: I’m 59 and have $45,000 in my 401(k). I earn $72,000. Am I doomed?",
+      "link": "https://www.marketwatch.com/story/my-retirement-is-going-to-be-a-disaster-im-59-and-have-45-000-in-my-401-k-i-earn-72-000-am-i-doomed-c4b05bb9?mod=mw_rss_topstories",
+      "date": "2025-01-25T16:54:00",
+      "description": "“My student loans are burying me.”",
+      "image_url": "https://images.mktw.net/im-81309743"
+    },
+    {
+      "title": "Why Trump should forget about corporate tax cuts in his first 100 days",
+      "link": "https://www.marketwatch.com/story/trumps-first-100-days-what-he-must-do-on-trade-immigration-and-tax-cuts-a28b69c3?mod=mw_rss_topstories",
+      "date": "2025-01-25T16:49:00",
+      "description": "Corporate tax cuts are inflationary and could spell trouble for Republicans in the 2026 election.",
+      "image_url": "https://images.mktw.net/im-46551203"
+    },
+    {
+      "title": "Airfares could soar almost 20% in the next few months. Here’s how to save on flights.",
+      "link": "https://www.marketwatch.com/story/airfares-could-soar-almost-20-in-the-next-few-months-heres-how-to-save-on-flights-ea562d56?mod=mw_rss_topstories",
+      "date": "2025-01-25T16:41:00",
+      "description": "Blame it on the law of supply and demand, say experts, as people are eager to travel.",
+      "image_url": "https://images.mktw.net/im-69058970"
+    },
+    {
+      "title": "Trump rolls back effort to lower Medicare, Medicaid drug costs",
+      "link": "https://www.marketwatch.com/story/trump-rolls-back-effort-to-lower-medicare-medicaid-drug-costs-c6d2b53d?mod=mw_rss_topstories",
+      "date": "2025-01-25T16:25:00",
+      "description": "Trump’s executive order halts an effort to cap the copayment for generic medications at $2 for Medicare beneficiaries.",
+      "image_url": "https://images.mktw.net/im-10975476"
+    },
+    {
+      "title": "There’s little to keep the stock market down as retiring boomers share their wealth",
+      "link": "https://www.marketwatch.com/story/theres-little-to-keep-the-stock-market-down-as-retiring-boomers-share-their-wealth-bcb691f9?mod=mw_rss_topstories",
+      "date": "2025-01-25T16:11:00",
+      "description": "Market strategist Ed Yardeni: Expect the S&amp;P 500 to hit 7,000 this year and 8,000 in 2026",
+      "image_url": "https://images.mktw.net/im-49793347"
+    },
+    {
+      "title": "I’m 63 and tried claiming Social Security early, but it was declined because I’m still working. Is that allowed?",
+      "link": "https://www.marketwatch.com/story/im-63-and-tried-claiming-social-security-early-but-it-was-declined-because-im-still-working-is-that-allowed-5649f871?mod=mw_rss_topstories",
+      "date": "2025-01-25T15:55:00",
+      "description": "“I was told as long as I work, I have to wait until I am 67 to start drawing my Social Security.”",
+      "image_url": "https://images.mktw.net/im-93488438"
+    }
+  ]
+}
