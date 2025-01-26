@@ -32,14 +32,15 @@ body {
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;  /* 增加过渡时间，使效果更平滑 */
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;  /* 添加透明边框，防止hover时的跳动 */
 }
 
 .article-card:hover {
   transform: translateX(5px);
-  background: #f8f9ff;  /* 添加淡蓝色背景 */
-  box-shadow: 0 3px 8px rgba(33, 150, 243, 0.15);  /* 增强阴影效果 */
-  border-left: 3px solid #2196F3;  /* 添加左侧边框 */
+  background: #eef3ff;  /* 加深背景色 */
+  box-shadow: 0 3px 8px rgba(33, 150, 243, 0.2);  /* 增强阴影效果 */
+  border-left: 3px solid #1976D2;  /* 加深边框颜色 */
 }
 
 .article-image-container {
@@ -294,13 +295,13 @@ input:checked + .slider:before {
 /* 修改悬停效果 */
 .article-card:hover .article-index {
     transform: scale(1.1);
-    background: linear-gradient(135deg, #1976D2, #1E88E5);
-    box-shadow: 0 3px 6px rgba(33, 150, 243, 0.3);
+    background: linear-gradient(135deg, #1565C0, #1976D2);  /* 加深渐变色 */
+    box-shadow: 0 3px 6px rgba(25, 118, 210, 0.4);
 }
 
 /* 修改标题悬停效果 */
 .article-card:hover .article-title {
-    color: #1976D2;  /* 标题颜色加深 */
+    color: #1565C0;  /* 加深标题颜色 */
 }
 
 /* 添加内容容器样式 */
