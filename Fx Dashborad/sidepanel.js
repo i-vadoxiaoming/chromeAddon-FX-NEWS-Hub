@@ -43,35 +43,63 @@ function switchTab(type) {
   updateRSS(type);
 }
 
-// 从 Supabase 获取数据
+// 添加全局变量
+let settings = {
+    showCN: true,
+    showJP: true,
+    showEN: true
+};
+
+// 从 Supabase 获取数据时添加过滤条件
 async function fetchDataFromSupabase(page = 0) {
     const supabaseUrl = 'https://jfhncvkdqrhasbffxeub.supabase.co';
     const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpmaG5jdmtkcXJoYXNiZmZ4ZXViIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzc4ODUyMjYsImV4cCI6MjA1MzQ2MTIyNn0.dEp6lCwwj76Fjl22eszcw8M6q8vyTy_UoWRklH86QmI';
 
     try {
         const start = page * pageSize;
-        console.log('Fetching data from Supabase...'); 
-        const response = await fetch(
-            `${supabaseUrl}/rest/v1/rss?select=*&order=update_date.desc&limit=${pageSize}&offset=${start}`, 
-            {
-                headers: {
-                    'apikey': supabaseKey,
-                    'Authorization': `Bearer ${supabaseKey}`
-                }
+        
+        // 构建nation过滤条件
+        const nations = [];
+        if (settings.showCN) nations.push('cn');
+        if (settings.showJP) nations.push('jp');
+        if (settings.showEN) nations.push('en');
+        
+        if (nations.length === 0) {
+            return []; // 如果没有选择任何语言，返回空数组
+        }
+
+        const nationFilter = nations.map(n => `nation.eq.${n}`).join(',');
+        const url = `${supabaseUrl}/rest/v1/rss?select=*&or=(${nationFilter})&order=update_date.desc&limit=${pageSize}&offset=${start}`;
+        
+        const response = await fetch(url, {
+            headers: {
+                'apikey': supabaseKey,
+                'Authorization': `Bearer ${supabaseKey}`
             }
-        );
+        });
 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
         const data = await response.json();
-        console.log('Data received:', data);
         return data;
     } catch (error) {
         console.error('Error fetching data from Supabase:', error);
         return null;
     }
+}
+
+// 添加已读文章存储
+function markArticleAsRead(link) {
+    let readArticles = JSON.parse(localStorage.getItem('readArticles') || '{}');
+    readArticles[link] = true;
+    localStorage.setItem('readArticles', JSON.stringify(readArticles));
+}
+
+function isArticleRead(link) {
+    const readArticles = JSON.parse(localStorage.getItem('readArticles') || '{}');
+    return readArticles[link] || false;
 }
 
 // 创建文章元素
@@ -148,9 +176,17 @@ function renderArticles(articles, append = false) {
         articleList.innerHTML = ''; // 如果不是追加，则清空现有内容
     }
 
-    articles.forEach(article => {
+    const startIndex = currentPage * pageSize + 1;
+    
+    articles.forEach((article, index) => {
         const articleCard = document.createElement('div');
         articleCard.className = 'article-card';
+        
+        // 添加序号标识
+        const indexBadge = document.createElement('div');
+        indexBadge.className = 'article-index';
+        indexBadge.textContent = `#${startIndex + index}`;
+        articleCard.appendChild(indexBadge);
 
         // 缩略图容器
         const imageContainer = document.createElement('div');
@@ -170,12 +206,18 @@ function renderArticles(articles, append = false) {
 
         // 标题（带超链接）
         const title = document.createElement('a');
-        title.className = 'article-title';
+        title.className = `article-title ${isArticleRead(article.link) ? 'read' : ''}`;
         title.href = article.link || '#';
         title.textContent = article.title;
-        title.target = '_blank'; // 在新标签页打开
+        title.target = '_blank';
+        
+        // 添加点击事件
+        title.addEventListener('click', () => {
+            markArticleAsRead(article.link);
+            title.classList.add('read');
+        });
+        
         titleContainer.appendChild(title);
-
         articleCard.appendChild(titleContainer);
         articleList.appendChild(articleCard);
     });
@@ -241,6 +283,31 @@ window.addEventListener('resize', () => {
   // 可以根据宽度动态调整布局
 });
 
+// 添加设置相关函数
+function loadSettings() {
+    const savedSettings = localStorage.getItem('rssSettings');
+    if (savedSettings) {
+        settings = JSON.parse(savedSettings);
+        updateSettingsUI();
+    }
+}
+
+function saveSettings() {
+    localStorage.setItem('rssSettings', JSON.stringify(settings));
+    currentPage = 0;
+    fetchDataFromSupabase(0).then(data => {
+        if (data) {
+            renderArticles(data);
+        }
+    });
+}
+
+function updateSettingsUI() {
+    document.getElementById('cn-toggle').checked = settings.showCN;
+    document.getElementById('jp-toggle').checked = settings.showJP;
+    document.getElementById('en-toggle').checked = settings.showEN;
+}
+
 // 初始化
 document.addEventListener('DOMContentLoaded', async () => {
     console.log('DOMContentLoaded event fired');
@@ -268,4 +335,36 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         });
     }
+
+    // 加载设置
+    loadSettings();
+
+    // 设置按钮点击事件
+    const settingsButton = document.getElementById('settings-button');
+    const settingsModal = document.getElementById('settings-modal');
+    const closeSettings = document.getElementById('close-settings');
+    const saveSettings = document.getElementById('save-settings');
+
+    settingsButton.addEventListener('click', () => {
+        settingsModal.style.display = 'block';
+    });
+
+    closeSettings.addEventListener('click', () => {
+        settingsModal.style.display = 'none';
+    });
+
+    saveSettings.addEventListener('click', () => {
+        settings.showCN = document.getElementById('cn-toggle').checked;
+        settings.showJP = document.getElementById('jp-toggle').checked;
+        settings.showEN = document.getElementById('en-toggle').checked;
+        saveSettings();
+        settingsModal.style.display = 'none';
+    });
+
+    // 点击模态框外部关闭
+    window.addEventListener('click', (event) => {
+        if (event.target === settingsModal) {
+            settingsModal.style.display = 'none';
+        }
+    });
 });
