@@ -37,12 +37,3 @@ jobs:
         run: |
           cd Fx\ Dashborad/rss_data
           python rss_parser.py
-
-      # 5. 提交生成的 JSON 文件（可选）
-      - name: Commit and push changes
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          git add Fx\ Dashborad/rss_data/output
-          git commit -m "Update RSS data [skip ci]"
-          git push 
