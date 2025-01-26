@@ -175,8 +175,10 @@ function handleScroll() {
 
   // 添加调试信息
   console.log(`Scroll position: ${scrollTop + clientHeight}/${scrollHeight}`);
+  console.log(`ScrollTop: ${scrollTop}, ClientHeight: ${clientHeight}, ScrollHeight: ${scrollHeight}`);
 
-  if (scrollTop + clientHeight >= scrollHeight - 100) {
+  // 检查是否接近底部
+  if (scrollTop + clientHeight >= scrollHeight - 50) { // 调整为更接近底部时触发
     console.log('Loading more articles...');
     loadMoreArticles();
   }
@@ -196,15 +198,6 @@ function renderArticles(articles) {
     const articleCard = document.createElement('div');
     articleCard.className = 'article-card';
 
-    // 缩略图
-    const imageContainer = document.createElement('div');
-    const image = document.createElement('img');
-    image.src = article.image_url || 'https://via.placeholder.com/300x180';
-    image.alt = article.title;
-    image.className = 'article-image';
-    imageContainer.appendChild(image);
-    articleCard.appendChild(imageContainer);
-
     // 内容区域
     const content = document.createElement('div');
     content.className = 'article-content';
@@ -214,24 +207,6 @@ function renderArticles(articles) {
     title.className = 'article-title';
     title.textContent = article.title;
     content.appendChild(title);
-
-    // 描述
-    if (article.description) {
-      const description = document.createElement('p');
-      description.className = 'article-description';
-      description.textContent = article.description;
-      content.appendChild(description);
-    }
-
-    // Read More 按钮
-    if (article.link) {
-      const readMore = document.createElement('a');
-      readMore.href = article.link;
-      readMore.className = 'read-more';
-      readMore.textContent = 'Read More';
-      readMore.target = '_blank';
-      content.appendChild(readMore);
-    }
 
     articleCard.appendChild(content);
     articleList.appendChild(articleCard);
@@ -253,11 +228,10 @@ async function updateRSS(type = 'news') {
     });
     
     if (response.status === 'success') {
-      // 重置分页状态
-      currentPage = 0;
+      // 直接渲染所有文章
       allArticles = response.data.articles;
       contentContainer.innerHTML = ''; // 清空现有内容
-      loadMoreArticles(); // 加载第一页
+      renderArticles(allArticles); // 渲染所有文章
     } else {
       showError(response.message || 'Failed to load RSS feeds');
     }
@@ -271,7 +245,7 @@ async function updateRSS(type = 'news') {
 // 初始化
 document.addEventListener('DOMContentLoaded', () => {
   // 确保内容容器有足够的高度
-  contentContainer.style.minHeight = '100vh';
+  contentContainer.style.minHeight = 'calc(100vh - 100px)'; // 减去header和loading的高度
 
   // 添加滚动监听
   window.addEventListener('scroll', handleScroll);

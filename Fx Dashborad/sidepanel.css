@@ -2,12 +2,65 @@ body {
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  overflow-y: auto; /* 确保允许垂直滚动 */
 }
 
 .content {
-  max-width: 1200px;
+  max-width: 100%; /* 确保内容区域宽度不超过页面宽度 */
   margin: 0 auto;
   padding: 20px;
+  overflow-y: auto; /* 确保内容容器允许垂直滚动 */
+  height: calc(100vh - 100px); /* 减去header和按钮的高度 */
+}
+
+.article-list {
+  display: flex;
+  flex-direction: column; /* 垂直排列 */
+  gap: 10px; /* 每个文章之间的间距 */
+}
+
+.article-card {
+  display: flex; /* 水平排列 */
+  align-items: center; /* 垂直居中 */
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px; /* 增加内边距 */
+  margin-bottom: 10px; /* 增加卡片之间的间距 */
+  width: 100%; /* 确保每行只显示一个资源 */
+  max-width: 100%; /* 确保最大宽度为100% */
+  white-space: nowrap; /* 防止标题换行 */
+  overflow: hidden; /* 隐藏超出部分 */
+  text-overflow: ellipsis; /* 超出部分显示省略号 */
+}
+
+.article-content {
+  flex: 1; /* 占据剩余空间 */
+  min-width: 0; /* 防止文本溢出 */
+}
+
+.article-title {
+  font-size: 14px; /* 调整标题字体大小 */
+  font-weight: bold;
+  margin-bottom: 4px; /* 增加标题与描述之间的间距 */
+  white-space: nowrap; /* 防止标题换行 */
+  overflow: hidden; /* 隐藏超出部分 */
+  text-overflow: ellipsis; /* 超出部分显示省略号 */
+}
+
+.read-more {
+  display: inline-block;
+  padding: 6px 12px; /* 调整按钮内边距 */
+  background: #007bff;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 14px; /* 调整按钮字体大小 */
+  margin-top: 8px; /* 增加按钮上边距 */
+}
+
+.read-more:hover {
+  background: #0056b3;
 }
 
 #loading {
@@ -18,9 +71,7 @@ body {
 }
 
 #refresh-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
+  margin: 10px; /* 上下边距 */
   padding: 10px 20px;
   background: #007bff;
   color: #fff;
