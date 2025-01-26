@@ -198,16 +198,25 @@ function renderArticles(articles) {
     const articleCard = document.createElement('div');
     articleCard.className = 'article-card';
 
+    // 缩略图
+    const image = document.createElement('img');
+    image.src = article.image_url || 'https://via.placeholder.com/50'; // 默认占位图
+    image.alt = article.title;
+    image.className = 'article-image';
+
     // 内容区域
     const content = document.createElement('div');
     content.className = 'article-content';
 
-    // 标题
-    const title = document.createElement('h3');
+    // 标题（带超链接）
+    const title = document.createElement('a');
     title.className = 'article-title';
+    title.href = article.link || '#'; // 如果没有链接，默认指向 #
     title.textContent = article.title;
+    title.target = '_blank'; // 在新标签页打开
     content.appendChild(title);
 
+    articleCard.appendChild(image);
     articleCard.appendChild(content);
     articleList.appendChild(articleCard);
   });
@@ -241,6 +250,13 @@ async function updateRSS(type = 'news') {
     setLoading(false);
   }
 }
+
+// 监听窗口大小变化
+window.addEventListener('resize', () => {
+  const bodyWidth = document.body.clientWidth;
+  console.log(`Current panel width: ${bodyWidth}px`);
+  // 可以根据宽度动态调整布局
+});
 
 // 初始化
 document.addEventListener('DOMContentLoaded', () => {

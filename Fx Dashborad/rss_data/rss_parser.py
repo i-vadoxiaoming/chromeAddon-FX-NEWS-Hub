@@ -9,6 +9,7 @@ from datetime import datetime
 from PIL import Image
 from io import BytesIO
 import os
+from requests.exceptions import RequestException
 
 class RSSParser:
     def __init__(self):
@@ -62,21 +63,21 @@ class RSSParser:
         for lang, urls in rss_sources.items():
             if not urls:  # 如果没有配置RSS源，跳过这个语言
                 print(f"No {content_type} RSS sources configured for {lang}")
-                    continue
+                continue
                     
             print(f"\nProcessing {len(urls)} {lang} {content_type} RSS feeds...")
             for url in urls:
                 try:
                     print(f"\nProcessing RSS feed: {url}")
-                feed_articles = self.parse_single_feed(url)
-                if feed_articles:
+                    feed_articles = self.parse_single_feed(url)
+                    if feed_articles:
                         articles_by_lang[lang].extend(feed_articles)
-                    print(f"Successfully added {len(feed_articles)} articles from {url}")
-                else:
-                    print(f"No valid articles found in {url}")
-            except Exception as e:
-                print(f"Error processing feed {url}: {e}")
-                continue
+                        print(f"Successfully added {len(feed_articles)} articles from {url}")
+                    else:
+                        print(f"No valid articles found in {url}")
+                except Exception as e:
+                    print(f"Error processing feed {url}: {e}")
+                    continue
 
             print(f"Total articles for {lang}: {len(articles_by_lang[lang])}")
         
@@ -371,15 +372,15 @@ class RSSParser:
                     else:
                         articles_to_save = articles
                     
-        data = {
-            'last_updated': datetime.now().isoformat(),
+                    data = {
+                        'last_updated': datetime.now().isoformat(),
                         'language': lang,
                         'type': content_type,
                         'articles': articles_to_save
-        }
+                    }
 
                     with open(filepath, 'w', encoding='utf-8') as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
+                        json.dump(data, f, ensure_ascii=False, indent=2)
                     
                     saved_files.append(filepath)
                     print(f"Saved {len(articles_to_save)} {lang} {content_type} articles to {filepath}")
@@ -433,9 +434,90 @@ class RSSParser:
         except Exception as e:
             print(f"Error saving file index: {e}")
 
+def fetch_rss_feed(url):
+    try:
+        response = requests.get(url, timeout=10)  # 设置超时时间
+        response.raise_for_status()  # 检查 HTTP 状态码
+        return response.content
+    except RequestException as e:
+        print(f"Error fetching RSS feed from {url}: {e}")
+        return None
+
+def parse_rss_feed(content):
+    try:
+        feed = feedparser.parse(content)
+        if feed.bozo:  # 检查是否有解析错误
+            print(f"Error parsing RSS feed: {feed.bozo_exception}")
+            return None
+        return feed
+    except Exception as e:
+        print(f"Error parsing RSS feed: {e}")
+        return None
+
+def save_to_json(data, file_path):
+    try:
+        with open(file_path, 'w', encoding='utf-8') as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        print(f"Data saved to {file_path}")
+    except IOError as e:
+        print(f"Error saving data to {file_path}: {e}")
+
+def load_from_json(file_path):
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except (IOError, json.JSONDecodeError) as e:
+        print(f"Error loading data from {file_path}: {e}")
+        return None
+
+def process_rss_feed(url, output_dir):
+    content = fetch_rss_feed(url)
+    if not content:
+        return None
+
+    feed = parse_rss_feed(content)
+    if not feed:
+        return None
+
+    articles = []
+    for entry in feed.entries:
+        article = {
+            'title': entry.title,
+            'link': entry.link,
+            'date': entry.get('published', ''),
+            'description': entry.get('description', ''),
+            'image_url': entry.get('media_content', [{}])[0].get('url', '') if 'media_content' in entry else ''
+        }
+        articles.append(article)
+
+    # 生成文件名
+    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    file_name = f"rss_data_{timestamp}.json"
+    file_path = os.path.join(output_dir, file_name)
+
+    # 保存数据
+    save_to_json({'articles': articles, 'last_updated': timestamp}, file_path)
+    return file_path
+
 def main():
     parser = RSSParser()
     parser.save_to_json()
 
 if __name__ == '__main__':
-    main() 
+    main()
+
+def save_to_json(data, file_path):
+    try:
+        with open(file_path, 'w', encoding='utf-8') as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        print(f"Data saved to {file_path}")
+    except IOError as e:
+        print(f"Error saving data to {file_path}: {e}")
+
+def load_from_json(file_path):
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except (IOError, json.JSONDecodeError) as e:
+        print(f"Error loading data from {file_path}: {e}")
+        return None 
