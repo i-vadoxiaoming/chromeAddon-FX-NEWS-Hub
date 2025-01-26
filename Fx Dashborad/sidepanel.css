@@ -27,16 +27,16 @@ body {
   position: relative;
   display: flex;
   gap: 10px;
-  padding: 15px;
+  padding: 15px 15px 15px 45px;  /* 增加左侧内边距，为序号留出空间 */
+  margin: 8px 0;  /* 减小卡片间距 */
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
-  margin-top: 10px;
+  transition: all 0.2s ease;
 }
 
 .article-card:hover {
-  transform: translateY(-2px);
+  transform: translateX(5px);  /* 向右滑动效果 */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
@@ -265,34 +265,46 @@ input:checked + .slider:before {
     color: #888;
 }
 
-/* 添加序号样式 */
+/* 新的序号样式 */
 .article-index {
     position: absolute;
-    top: -8px;
-    left: -8px;
-    background: #007bff;
-    color: white;
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    font-weight: bold;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    left: 12px;  /* 固定在左侧 */
+    top: 50%;    /* 垂直居中 */
+    transform: translateY(-50%);
+    color: #2196F3;
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 24px;
+    text-align: center;
+    padding: 2px 0;
+    border-right: 2px solid #2196F3;  /* 添加右侧边框作为分隔 */
 }
 
-/* 添加进度指示器样式 */
+/* 悬停效果 */
+.article-card:hover .article-index {
+    color: #1976D2;  /* 深一点的蓝色 */
+    border-right-color: #1976D2;
+}
+
+/* 修改进度指示器样式 */
 .progress-indicator {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: rgba(0, 123, 255, 0.9);
+    background: #2196F3;
     color: white;
-    padding: 8px 12px;
+    padding: 6px 12px;
     border-radius: 20px;
     font-size: 12px;
+    font-weight: 500;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.progress-indicator::before {
+    content: '📍';  /* 添加位置图标 */
+    font-size: 14px;
 }

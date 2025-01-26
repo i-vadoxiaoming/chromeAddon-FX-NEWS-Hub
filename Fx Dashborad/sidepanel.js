@@ -7,6 +7,7 @@ let allArticles = [];
 let isLoading = false;
 let hasMore = true;
 let currentType = 'news';
+let totalArticles = 0;
 
 // 获取页面元素
 const loadingIndicator = document.getElementById('loading');
@@ -174,9 +175,10 @@ function renderArticles(articles, append = false) {
 
     if (!append) {
         articleList.innerHTML = ''; // 如果不是追加，则清空现有内容
+        totalArticles = 0; // 重置总文章数
     }
 
-    const startIndex = currentPage * pageSize + 1;
+    const startIndex = totalArticles + 1; // 使用总文章数来计算序号
     
     articles.forEach((article, index) => {
         const articleCard = document.createElement('div');
@@ -185,7 +187,7 @@ function renderArticles(articles, append = false) {
         // 添加序号标识
         const indexBadge = document.createElement('div');
         indexBadge.className = 'article-index';
-        indexBadge.textContent = `#${startIndex + index}`;
+        indexBadge.textContent = `${startIndex + index}`;
         articleCard.appendChild(indexBadge);
 
         // 缩略图容器
@@ -221,6 +223,14 @@ function renderArticles(articles, append = false) {
         articleCard.appendChild(titleContainer);
         articleList.appendChild(articleCard);
     });
+
+    totalArticles += articles.length; // 更新总文章数
+
+    // 更新进度指示器
+    const progressIndicator = document.getElementById('progress-indicator');
+    if (progressIndicator) {
+        progressIndicator.textContent = `${totalArticles} 篇文章`;
+    }
 }
 
 // 检查滚动位置并加载更多内容
@@ -228,7 +238,7 @@ async function checkScrollAndLoad() {
     if (isLoading || !hasMore) return;
 
     const content = document.getElementById('content');
-    const threshold = 100; // 距离底部多少像素时开始加载
+    const threshold = 100;
 
     if (content.scrollHeight - content.scrollTop - content.clientHeight < threshold) {
         isLoading = true;
@@ -238,7 +248,7 @@ async function checkScrollAndLoad() {
         const newArticles = await fetchDataFromSupabase(currentPage);
 
         if (newArticles && newArticles.length > 0) {
-            renderArticles(newArticles, true);
+            renderArticles(newArticles, true);  // 传入 true 表示追加模式
             hasMore = newArticles.length === pageSize;
         } else {
             hasMore = false;
@@ -295,6 +305,7 @@ function loadSettings() {
 function saveSettings() {
     localStorage.setItem('rssSettings', JSON.stringify(settings));
     currentPage = 0;
+    totalArticles = 0;  // 重置总文章数
     fetchDataFromSupabase(0).then(data => {
         if (data) {
             renderArticles(data);
@@ -312,6 +323,9 @@ function updateSettingsUI() {
 document.addEventListener('DOMContentLoaded', async () => {
     console.log('DOMContentLoaded event fired');
 
+    // 重置计数器
+    totalArticles = 0;
+
     // 初始加载数据
     const data = await fetchDataFromSupabase(0);
     if (data) {
@@ -328,6 +342,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (refreshButton) {
         refreshButton.addEventListener('click', async () => {
             currentPage = 0;
+            totalArticles = 0;  // 重置总文章数
             hasMore = true;
             const newData = await fetchDataFromSupabase(0);
             if (newData) {
