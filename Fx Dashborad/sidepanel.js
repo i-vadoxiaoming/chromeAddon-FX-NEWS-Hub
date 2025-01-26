@@ -74,6 +74,50 @@ async function fetchRSSData(type = currentType) {
   }
 }
 
+// 从 GitHub 获取文件内容
+async function fetchFileFromGitHub(filePath, githubToken) {
+    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+    const url = `https://api.github.com/repos/chenyijun777/chromeAddon/contents/${filePath}`;
+    console.log('Fetching file from:', url); // 打印请求的 URL
+
+    const headers = {
+        'Accept': 'application/vnd.github.v3+json',
+        'User-Agent': 'Fx Dashboard'
+    };
+    if (githubToken) {
+        headers['Authorization'] = `token ${githubToken}`;
+    }
+
+    try {
+        const response = await fetch(proxyUrl + url, { headers });
+        console.log('Response status:', response.status); // 打印响应状态码
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        console.log('Response data:', data); // 打印响应数据
+        const content = atob(data.content); // 解码 base64 内容
+        return JSON.parse(content);
+    } catch (error) {
+        console.error('Error fetching file from GitHub:', error);
+        return null;
+    }
+}
+
+// 获取最新的 RSS 数据
+async function getLatestRssData(contentType = 'news', lang = 'en', githubToken) {
+    const indexPath = `Fx%20Dashborad/rss_data/output/news/file_index.json`;
+    console.log('Index path:', indexPath); // 打印文件路径
+    const index = await fetchFileFromGitHub(indexPath, githubToken);
+    if (!index || !index[lang]) {
+        return null;
+    }
+
+    const latestFile = index[lang][0]; // 获取最新的文件
+    const filePath = `Fx Dashborad/rss_data/output/${contentType}/${lang}/${latestFile}`;
+    return fetchFileFromGitHub(filePath, githubToken);
+}
+
 // 创建文章元素
 function createArticleElement(article) {
   const articleDiv = document.createElement('div');
@@ -186,42 +230,47 @@ function handleScroll() {
 
 // 渲染文章列表
 function renderArticles(articles) {
-  if (!contentContainer) {
-    console.error('Cannot render articles: content container is null');
-    return;
-  }
+    const articleList = document.getElementById('article-list');
+    if (!articleList) {
+        console.error('Article list container not found');
+        return;
+    }
+    articleList.innerHTML = ''; // 清空现有内容
 
-  const articleList = document.createElement('div');
-  articleList.className = 'article-list';
+    articles.forEach(article => {
+        const articleCard = document.createElement('div');
+        articleCard.className = 'article-card';
 
-  articles.forEach(article => {
-    const articleCard = document.createElement('div');
-    articleCard.className = 'article-card';
+        // 缩略图
+        const image = document.createElement('img');
+        image.src = article.image_url || 'https://via.placeholder.com/50';
+        image.alt = article.title;
+        image.className = 'article-image';
+        articleCard.appendChild(image);
 
-    // 缩略图
-    const image = document.createElement('img');
-    image.src = article.image_url || 'https://via.placeholder.com/50'; // 默认占位图
-    image.alt = article.title;
-    image.className = 'article-image';
+        // 内容区域
+        const content = document.createElement('div');
+        content.className = 'article-content';
 
-    // 内容区域
-    const content = document.createElement('div');
-    content.className = 'article-content';
+        // 标题（带超链接）
+        const title = document.createElement('a');
+        title.className = 'article-title';
+        title.href = article.link || '#';
+        title.textContent = article.title;
+        title.target = '_blank'; // 在新标签页打开
+        content.appendChild(title);
 
-    // 标题（带超链接）
-    const title = document.createElement('a');
-    title.className = 'article-title';
-    title.href = article.link || '#'; // 如果没有链接，默认指向 #
-    title.textContent = article.title;
-    title.target = '_blank'; // 在新标签页打开
-    content.appendChild(title);
+        // 描述
+        if (article.description) {
+            const description = document.createElement('p');
+            description.className = 'article-description';
+            description.textContent = article.description;
+            content.appendChild(description);
+        }
 
-    articleCard.appendChild(image);
-    articleCard.appendChild(content);
-    articleList.appendChild(articleCard);
-  });
-
-  contentContainer.appendChild(articleList);
+        articleCard.appendChild(content);
+        articleList.appendChild(articleCard);
+    });
 }
 
 // 获取并显示RSS数据
@@ -259,7 +308,7 @@ window.addEventListener('resize', () => {
 });
 
 // 初始化
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   // 确保内容容器有足够的高度
   contentContainer.style.minHeight = 'calc(100vh - 100px)'; // 减去header和loading的高度
 
@@ -287,4 +336,17 @@ document.addEventListener('DOMContentLoaded', () => {
       updateRSS(currentType);
     });
   }
+
+  // 初始化加载数据
+  const githubToken = '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'; // 如果需要访问私有仓库，提供 GitHub Token
+  const latestNews = await getLatestRssData('news', 'en', githubToken);
+  if (latestNews && latestNews.articles) {
+    renderArticles(latestNews.articles);
+  } else {
+    console.error('No articles found');
+  }
+
+  setTimeout(() => {
+    document.getElementById('search-input').focus();
+  }, 100); // 延迟 100 毫秒
 });

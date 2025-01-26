@@ -1,0 +1,4 @@
+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
+
+
+curl -H "Authorization: Bearer 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" -H "Accept: application/vnd.github.v3+json"  https://api.github.com/repos/chenyijun777/chromeAddon/contents/Fx%20Dashborad/rss_data/output/news/file_index.json
