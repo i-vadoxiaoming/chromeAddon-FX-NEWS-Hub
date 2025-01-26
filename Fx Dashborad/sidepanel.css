@@ -27,17 +27,19 @@ body {
   position: relative;
   display: flex;
   gap: 10px;
-  padding: 15px 15px 15px 45px;  /* 增加左侧内边距，为序号留出空间 */
-  margin: 8px 0;  /* 减小卡片间距 */
+  padding: 15px;
+  margin: 10px 5px;
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;  /* 增加过渡时间，使效果更平滑 */
 }
 
 .article-card:hover {
-  transform: translateX(5px);  /* 向右滑动效果 */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  transform: translateX(5px);
+  background: #f8f9ff;  /* 添加淡蓝色背景 */
+  box-shadow: 0 3px 8px rgba(33, 150, 243, 0.15);  /* 增强阴影效果 */
+  border-left: 3px solid #2196F3;  /* 添加左侧边框 */
 }
 
 .article-image-container {
@@ -57,7 +59,8 @@ body {
 .article-title-container {
   flex: 1;
   display: flex;
-  align-items: center;
+  align-items: flex-start;  /* 改为顶部对齐 */
+  padding-right: 40px;  /* 为序号留出空间 */
 }
 
 .article-title {
@@ -265,25 +268,47 @@ input:checked + .slider:before {
     color: #888;
 }
 
-/* 新的序号样式 */
+/* 重新设计序号样式 - 放到右上角 */
 .article-index {
     position: absolute;
-    left: 12px;  /* 固定在左侧 */
-    top: 50%;    /* 垂直居中 */
-    transform: translateY(-50%);
-    color: #2196F3;
-    font-size: 14px;
-    font-weight: 600;
+    right: 10px;           /* 距离右边 10px */
+    top: 10px;            /* 距离顶部 10px */
+    transform: none;
     min-width: 24px;
-    text-align: center;
-    padding: 2px 0;
-    border-right: 2px solid #2196F3;  /* 添加右侧边框作为分隔 */
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #2196F3, #21CBF3);
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(33, 150, 243, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+    z-index: 2;
+    padding: 0 6px;  /* 添加水平内边距，适应不同数字长度 */
 }
 
-/* 悬停效果 */
+/* 修改悬停效果 */
 .article-card:hover .article-index {
-    color: #1976D2;  /* 深一点的蓝色 */
-    border-right-color: #1976D2;
+    transform: scale(1.1);
+    background: linear-gradient(135deg, #1976D2, #1E88E5);
+    box-shadow: 0 3px 6px rgba(33, 150, 243, 0.3);
+}
+
+/* 修改标题悬停效果 */
+.article-card:hover .article-title {
+    color: #1976D2;  /* 标题颜色加深 */
+}
+
+/* 添加内容容器样式 */
+.article-content {
+    display: flex;
+    flex: 1;
+    gap: 10px;
+    min-width: 0;  /* 确保内容可以正确缩放 */
 }
 
 /* 修改进度指示器样式 */
@@ -291,20 +316,20 @@ input:checked + .slider:before {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: #2196F3;
+    background: linear-gradient(135deg, #2196F3, #21CBF3);
     color: white;
-    padding: 6px 12px;
+    padding: 8px 16px;
     border-radius: 20px;
     font-size: 12px;
     font-weight: 500;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 3px 6px rgba(33, 150, 243, 0.3);
     z-index: 1000;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 6px;
 }
 
 .progress-indicator::before {
-    content: '📍';  /* 添加位置图标 */
+    content: '📌';  /* 使用图钉图标 */
     font-size: 14px;
 }
