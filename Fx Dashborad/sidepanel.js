@@ -210,7 +210,7 @@ function renderArticles(articles, append = false) {
         const title = document.createElement('a');
         title.className = `article-title ${isArticleRead(article.link) ? 'read' : ''}`;
         title.href = article.link || '#';
-        title.textContent = article.title;
+        title.textContent = article.title + (article.site ? ` [${article.site}]` : '');
         title.target = '_blank';
         
         // 添加点击事件
@@ -412,7 +412,7 @@ function createNewsCard(article) {
 // 显示新闻
 async function displayNews() {
     try {
-        // 使用正确的选择器
+        // 使用正确的选择器 #news-panel
         const newsContainer = document.querySelector('#news-panel');
         if (!newsContainer) {
             console.error('News container (#news-panel) not found');
@@ -420,7 +420,7 @@ async function displayNews() {
         }
         
         const articles = await fetchNewsFromSupabase();
-        console.log('Fetched articles:', articles);  // 检查获取到的数据
+        console.log('Fetched articles:', articles);
         
         // 清空现有内容
         newsContainer.innerHTML = '';
