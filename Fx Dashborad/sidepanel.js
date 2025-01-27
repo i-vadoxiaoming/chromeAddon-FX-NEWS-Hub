@@ -85,7 +85,7 @@ async function fetchDataFromSupabase(page = 0) {
 
         const data = await response.json();
         return data;
-    } catch (error) {
+  } catch (error) {
         console.error('Error fetching data from Supabase:', error);
         return null;
     }
@@ -244,7 +244,7 @@ async function checkScrollAndLoad() {
         isLoading = true;
         document.getElementById('loading').style.display = 'block';
 
-        currentPage++;
+    currentPage++;
         const newArticles = await fetchDataFromSupabase(currentPage);
 
         if (newArticles && newArticles.length > 0) {
@@ -254,7 +254,7 @@ async function checkScrollAndLoad() {
             hasMore = false;
         }
 
-        isLoading = false;
+  isLoading = false;
         document.getElementById('loading').style.display = 'none';
     }
 }
@@ -382,4 +382,63 @@ document.addEventListener('DOMContentLoaded', async () => {
             settingsModal.style.display = 'none';
         }
     });
+});
+
+// 从 Supabase 获取新闻数据
+async function fetchNewsFromSupabase() {
+    const response = await fetch('https://jfhncvkdqrhasbffxeub.supabase.co/rest/v1/rss', {
+        headers: {
+            'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpmaG5jdmtkcXJoYXNiZmZ4ZXViIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTczNzg4NTIyNiwiZXhwIjoyMDUzNDYxMjI2fQ.mezMLhqmDWy3oUTS8y9aqFDXgtol7L8ULUvoFUAN3-Y'
+        }
+    });
+    return await response.json();
+}
+
+// 创建新闻卡片
+function createNewsCard(article) {
+    const card = document.createElement('div');
+    card.className = 'news-card';
+
+    // 创建标题，并在后面直接添加 site
+    const title = document.createElement('h3');
+    title.textContent = `${article.title} [${article.site || '未知来源'}]`;
+    console.log('Creating card for article:', article);  // 检查每篇文章的数据
+
+    card.appendChild(title);
+
+    return card;
+}
+
+// 显示新闻
+async function displayNews() {
+    try {
+        // 使用正确的选择器
+        const newsContainer = document.querySelector('#news-panel');
+        if (!newsContainer) {
+            console.error('News container (#news-panel) not found');
+            return;
+        }
+        
+        const articles = await fetchNewsFromSupabase();
+        console.log('Fetched articles:', articles);  // 检查获取到的数据
+        
+        // 清空现有内容
+        newsContainer.innerHTML = '';
+        
+        // 添加新的新闻卡片
+        articles.forEach(article => {
+            const card = createNewsCard(article);
+            newsContainer.appendChild(card);
+        });
+        
+        console.log('Total articles loaded:', articles.length);
+    } catch (error) {
+        console.error('Error displaying news:', error);
+    }
+}
+
+// 页面加载时初始化
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM Content Loaded');  // 调试日志
+    displayNews();
 });

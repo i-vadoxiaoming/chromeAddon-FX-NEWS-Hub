@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
 import re
 import time
-from datetime import datetime
+from datetime import datetime, timedelta
 from PIL import Image
 from io import BytesIO
 import os
@@ -20,7 +20,7 @@ class RSSParser:
         }
         self.session = requests.Session()
         self.image_cache = {}
-        
+
         # Supabase 配置
         self.supabase_url = 'https://jfhncvkdqrhasbffxeub.supabase.co'
         self.supabase_key = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpmaG5jdmtkcXJoYXNiZmZ4ZXViIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTczNzg4NTIyNiwiZXhwIjoyMDUzNDYxMjI2fQ.mezMLhqmDWy3oUTS8y9aqFDXgtol7L8ULUvoFUAN3-Y'
@@ -56,44 +56,59 @@ class RSSParser:
         return default_sources
 
     def save_to_supabase(self, articles, content_type, nation):
-        """保存数据到 Supabase"""
+        """保存数据到 Supabase，并删除7天前的数据"""
         headers = {
             'apikey': self.supabase_key,
             'Authorization': f'Bearer {self.supabase_key}',
             'Content-Type': 'application/json',
-            'Prefer': 'resolution=merge-duplicates'  # 使用 upsert 模式
+            'Prefer': 'resolution=merge-duplicates'
         }
 
+        # 删除7天前的数据
+        seven_days_ago = (datetime.now() - timedelta(days=7)).strftime('%Y-%m-%d %H:%M:%S')
+        try:
+            delete_response = requests.delete(
+                f'{self.supabase_url}/rest/v1/rss',
+                headers=headers,
+                params={
+                    'update_date': f'lt.{seven_days_ago}'
+                }
+            )
+            if delete_response.status_code == 200:
+                print(f"Successfully deleted articles older than {seven_days_ago}")
+            else:
+                print(f"Error deleting old articles: {delete_response.status_code}")
+        except Exception as e:
+            print(f"Exception while deleting old articles: {str(e)}")
+
+        # 保存新文章
         for article in articles:
-            # 准备数据
+            site = urlparse(article['link']).netloc
             data = {
                 'title': article['title'],
-                'link': article['link'],  # 作为唯一键
-                'description': article.get('description', ''),
+                'link': article['link'],
                 'image_url': article.get('image_url', ''),
-                'update_date': article.get('date', datetime.now().isoformat()),
-                'nation': nation  # 添加 nation 字段
+                'update_date': article.get('date', datetime.now().strftime('%Y-%m-%d %H:%M:%S')),
+                'nation': nation,
+                'site': site
             }
             
-            # 根据内容类型设置标志
             if content_type == 'news':
                 data['newsFlag'] = 'news'
             elif content_type == 'strategy':
                 data['strategyFlag'] = 'strategy'
 
             try:
-                # 使用 UPSERT 操作 - 如果记录存在则更新，不存在则插入
                 response = requests.post(
                     f'{self.supabase_url}/rest/v1/rss',
                     headers=headers,
                     json=data
                 )
                 
-                if response.status_code in [201, 200]:  # 201: Created, 200: Updated
+                if response.status_code in [201, 200]:
                     print(f"Successfully saved/updated article: {article['title']}")
                 else:
                     print(f"Error saving article: {article['title']}, Status: {response.status_code}")
-                    print(f"Error details: {response.text}")
                     
             except Exception as e:
                 print(f"Exception while saving article: {str(e)}")
@@ -112,16 +127,16 @@ class RSSParser:
         for lang, urls in rss_sources.items():
             if not urls:
                 print(f"No {content_type} RSS sources configured for {lang}")
-                continue
+                    continue
                     
             print(f"\nProcessing {len(urls)} {lang} {content_type} RSS feeds...")
             for url in urls:
                 try:
                     print(f"\nProcessing RSS feed: {url}")
-                    feed_articles = self.parse_single_feed(url)
-                    if feed_articles:
+                feed_articles = self.parse_single_feed(url)
+                if feed_articles:
                         articles_by_lang[lang].extend(feed_articles)
-                        print(f"Successfully added {len(feed_articles)} articles from {url}")
+                    print(f"Successfully added {len(feed_articles)} articles from {url}")
                         
                         # 保存到 Supabase，传入对应的 nation
                         nation_mapping = {
@@ -130,13 +145,67 @@ class RSSParser:
                             'jp': 'jp'
                         }
                         self.save_to_supabase(feed_articles, content_type, nation_mapping[lang])
-                    else:
-                        print(f"No valid articles found in {url}")
-                except Exception as e:
-                    print(f"Error processing feed {url}: {e}")
-                    continue
+                else:
+                    print(f"No valid articles found in {url}")
+            except Exception as e:
+                print(f"Error processing feed {url}: {e}")
+                continue
 
         return articles_by_lang
+
+    def get_image_from_entry(self, entry):
+        """从RSS条目中提取图片URL，按优先级处理不同来源"""
+        image_url = None
+        
+        # 1. 检查 enclosure
+        if hasattr(entry, 'enclosures') and entry.enclosures:
+            for enclosure in entry.enclosures:
+                if enclosure.get('type', '').startswith('image/') or enclosure.get('url', '').endswith(('.jpg', '.jpeg', '.png', '.gif')):
+                    image_url = enclosure.get('url')
+                    print(f"Found image in enclosure: {image_url}")
+                    return image_url
+
+        # 2. 检查 media:content 和 media:thumbnail
+        if hasattr(entry, 'media_content'):
+            for media in entry.media_content:
+                if media.get('type', '').startswith('image/') or media.get('url', '').endswith(('.jpg', '.jpeg', '.png', '.gif')):
+                    image_url = media.get('url')
+                    print(f"Found image in media_content: {image_url}")
+                    return image_url
+        
+        if hasattr(entry, 'media_thumbnail'):
+            try:
+                image_url = entry.media_thumbnail[0]['url']
+                print(f"Found image in media_thumbnail: {image_url}")
+                return image_url
+            except (IndexError, KeyError):
+                pass
+
+        # 3. 检查 description 中的图片
+        if hasattr(entry, 'description'):
+            desc_soup = BeautifulSoup(entry.description, 'html.parser')
+            img = desc_soup.find('img')
+            if img:
+                for attr in ['src', 'data-src', 'data-original']:
+                    if img.get(attr):
+                        image_url = img[attr]
+                        print(f"Found image in description {attr}: {image_url}")
+                        return image_url
+
+        # 4. 检查 content 中的图片
+        if hasattr(entry, 'content'):
+            for content in entry.content:
+                if 'value' in content:
+                    content_soup = BeautifulSoup(content['value'], 'html.parser')
+                    img = content_soup.find('img')
+                    if img:
+                        for attr in ['src', 'data-src', 'data-original']:
+                            if img.get(attr):
+                                image_url = img[attr]
+                                print(f"Found image in content {attr}: {image_url}")
+                                return image_url
+
+        return image_url
 
     def parse_single_feed(self, rss_url):
         """解析单个RSS源"""
@@ -150,85 +219,50 @@ class RSSParser:
             articles = []
             total = len(feed.entries)
             
-            print(f"Found {total} articles in {rss_url}")
             for i, entry in enumerate(feed.entries, 1):
-                print(f"Processing article {i}/{total}: {entry.get('title', '')}")
+                print(f"\nProcessing article {i}/{total}: {entry.get('title', '')}")
                 
-                # 改进日期处理
-                date = ''
-                try:
-                    if hasattr(entry, 'published_parsed') and entry.published_parsed:
-                        date = datetime.fromtimestamp(time.mktime(entry.published_parsed)).isoformat()
-                    elif hasattr(entry, 'updated_parsed') and entry.updated_parsed:
-                        date = datetime.fromtimestamp(time.mktime(entry.updated_parsed)).isoformat()
-                    else:
-                        # 如果没有日期，使用当前时间
-                        date = datetime.now().isoformat()
-                except Exception as e:
-                    print(f"Error parsing date for article: {e}")
-                    date = datetime.now().isoformat()
-                
+                # 获取链接
+                link = entry.get('link') or entry.get('url') or entry.get('guid')
+                if not link:
+                    print(f"Warning: No link found for article: {entry.get('title', '')}")
+                    continue
+
+                # 构建文章基本信息
                 article = {
                     'title': entry.get('title', ''),
-                    'link': entry.get('link', ''),
-                    'date': date,
-                    'description': entry.get('description', '')
+                    'link': link,
+                    'date': self.parse_date(entry)
                 }
 
-                # 1. 首先尝试从RSS XML中获取图片
-                image_url = None
+                # 获取图片URL
+                image_url = self.get_image_from_entry(entry)
                 
-                # 检查所有可能的RSS图片字段
-                if hasattr(entry, 'media_thumbnail'):
-                    image_url = entry.media_thumbnail[0]['url']
-                    print(f"Found media_thumbnail: {image_url}")
-                elif hasattr(entry, 'media_content'):
-                    for media in entry.media_content:
-                        if 'image' in media.get('type', '').lower():
-                            image_url = media['url']
-                            print(f"Found media_content: {image_url}")
-                            break
-                elif hasattr(entry, 'enclosures'):
-                    for enclosure in entry.enclosures:
-                        if 'image' in enclosure.get('type', '').lower():
-                            image_url = enclosure.href
-                            print(f"Found enclosure: {image_url}")
-                            break
-                elif hasattr(entry, 'links'):
-                    for link in entry.links:
-                        if 'image' in link.get('type', '').lower():
-                            image_url = link.href
-                            print(f"Found link: {image_url}")
-                            break
-
-                # 2. 如果RSS中没有图片，从文章内容中提取
+                # 如果RSS中没有找到图片，尝试从文章页面获取
                 if not image_url:
-                    # 先检查description中的图片
-                    if article['description']:
-                        image_url = self.extract_image_from_html(article['description'], article['link'])
-                        if image_url:
-                            print(f"Found image in description: {image_url}")
-                    
-                    # 如果description中没有，访问文章页面
-                    if not image_url:
-                        image_url = self.get_article_image(article['link'])
-                        if image_url:
-                            print(f"Found image in article page: {image_url}")
+                    image_url = self.fetch_article_image(article['link'])
 
-                # 3. 如果都没找到，使用默认图片
-                if image_url:
-                    # 验证图片URL是否有效
-                    if self.is_valid_image(image_url):
+                # 处理图片URL
+                        if image_url:
+                    # 处理相对URL
+                    if not image_url.startswith(('http://', 'https://')):
+                        image_url = urljoin(article['link'], image_url)
+                    
+                    # 清理URL中的特殊参数
+                    if 'zhimg.com' in image_url:
+                        image_url = image_url.split('?')[0]
+                    elif '?' in image_url and any(x in image_url.lower() for x in ['size=', 'width=', 'height=', 'quality=']):
+                        image_url = image_url.split('?')[0]
+                    
                         article['image_url'] = image_url
-                        print(f"Using valid image: {image_url}")
-                    else:
-                        default_image = self.get_default_image(article)
-                        article['image_url'] = default_image
-                        print(f"Image invalid, using default: {default_image}")
                 else:
-                    default_image = self.get_default_image(article)
-                    article['image_url'] = default_image
-                    print(f"No image found, using default: {default_image}")
+                    article['image_url'] = ''
+
+                print(f"Final article data:")
+                print(f"Title: {article['title']}")
+                print(f"Link: {article['link']}")
+                print(f"Image: {article['image_url']}")
+                print("-" * 50)
 
                 articles.append(article)
 
@@ -239,6 +273,46 @@ class RSSParser:
             import traceback
             traceback.print_exc()
             return []
+
+    def parse_date(self, entry):
+        """解析文章日期"""
+        try:
+            if hasattr(entry, 'published_parsed') and entry.published_parsed:
+                return datetime.fromtimestamp(time.mktime(entry.published_parsed)).strftime('%Y-%m-%d %H:%M:%S')
+            elif hasattr(entry, 'updated_parsed') and entry.updated_parsed:
+                return datetime.fromtimestamp(time.mktime(entry.updated_parsed)).strftime('%Y-%m-%d %H:%M:%S')
+            else:
+                return datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        except Exception as e:
+            print(f"Error parsing date: {e}")
+            return datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
+    def fetch_article_image(self, article_url):
+        """从文章页面获取图片"""
+        try:
+            article_domain = urlparse(article_url).netloc
+            response = self.session.get(article_url, headers=self.headers, timeout=10)
+            if response.ok:
+                soup = BeautifulSoup(response.text, 'html.parser')
+                
+                # 先查找Open Graph图片
+                og_image = soup.find('meta', {'property': 'og:image'})
+                if og_image and og_image.get('content'):
+                    return og_image['content']
+                
+                # 查找文章内容中的图片
+                for img in soup.find_all('img'):
+                    src = img.get('src', '')
+                    if src and not any(x in src.lower() for x in ['avatar', 'icon', 'logo']):
+                        return src
+                
+                # 最后尝试网站logo
+                logo = soup.find('link', {'rel': 'icon'}) or soup.find('link', {'rel': 'shortcut icon'})
+                if logo and logo.get('href'):
+                    return logo['href']
+        except Exception as e:
+            print(f"Error fetching article image: {e}")
+        return None
 
     def is_valid_image(self, url):
         """检查URL是否是有效的图片"""
@@ -427,8 +501,8 @@ class RSSParser:
                     else:
                         articles_to_save = articles
                     
-                    data = {
-                        'last_updated': datetime.now().isoformat(),
+        data = {
+            'last_updated': datetime.now().isoformat(),
                         'language': lang,
                         'type': content_type,
                         'articles': articles_to_save
@@ -566,7 +640,7 @@ def main():
     parser.parse_all_feeds('strategy')
 
 if __name__ == '__main__':
-    main()
+    main() 
 
 def save_to_json(data, file_path):
     try:
