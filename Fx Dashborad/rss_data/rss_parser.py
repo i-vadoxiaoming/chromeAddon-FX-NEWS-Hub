@@ -127,16 +127,16 @@ class RSSParser:
         for lang, urls in rss_sources.items():
             if not urls:
                 print(f"No {content_type} RSS sources configured for {lang}")
-                    continue
-                    
+                continue
+
             print(f"\nProcessing {len(urls)} {lang} {content_type} RSS feeds...")
             for url in urls:
                 try:
                     print(f"\nProcessing RSS feed: {url}")
-                feed_articles = self.parse_single_feed(url)
-                if feed_articles:
+                    feed_articles = self.parse_single_feed(url)
+                    if feed_articles:
                         articles_by_lang[lang].extend(feed_articles)
-                    print(f"Successfully added {len(feed_articles)} articles from {url}")
+                        print(f"Successfully added {len(feed_articles)} articles from {url}")
                         
                         # 保存到 Supabase，传入对应的 nation
                         nation_mapping = {
@@ -145,11 +145,11 @@ class RSSParser:
                             'jp': 'jp'
                         }
                         self.save_to_supabase(feed_articles, content_type, nation_mapping[lang])
-                else:
-                    print(f"No valid articles found in {url}")
-            except Exception as e:
-                print(f"Error processing feed {url}: {e}")
-                continue
+                    else:
+                        print(f"No valid articles found in {url}")
+                except Exception as e:
+                    print(f"Error processing feed {url}: {e}")
+                    continue
 
         return articles_by_lang
 
@@ -243,7 +243,7 @@ class RSSParser:
                     image_url = self.fetch_article_image(article['link'])
 
                 # 处理图片URL
-                        if image_url:
+                if image_url:
                     # 处理相对URL
                     if not image_url.startswith(('http://', 'https://')):
                         image_url = urljoin(article['link'], image_url)
@@ -254,7 +254,7 @@ class RSSParser:
                     elif '?' in image_url and any(x in image_url.lower() for x in ['size=', 'width=', 'height=', 'quality=']):
                         image_url = image_url.split('?')[0]
                     
-                        article['image_url'] = image_url
+                    article['image_url'] = image_url
                 else:
                     article['image_url'] = ''
 
@@ -501,8 +501,8 @@ class RSSParser:
                     else:
                         articles_to_save = articles
                     
-        data = {
-            'last_updated': datetime.now().isoformat(),
+                    data = {
+                        'last_updated': datetime.now().isoformat(),
                         'language': lang,
                         'type': content_type,
                         'articles': articles_to_save
