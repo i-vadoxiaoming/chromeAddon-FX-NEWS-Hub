@@ -5,7 +5,7 @@ on:
     branches:
       - main  # 在 main 分支推送时触发
   schedule:
-    - cron: '0 */10 * * *'  # 每 6 小时运行一次
+    - cron: '0 */1 * * *'  # 每 6 小时运行一次
   workflow_dispatch:  # 允许手动触发
 
 jobs:
