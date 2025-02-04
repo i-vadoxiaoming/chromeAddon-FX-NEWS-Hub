@@ -1,11 +1,6 @@
 {
   "rssSources": {
     "zh": [
-      "https://feedx.net/rss/caijing.xml",
-      "https://feedx.net/rss/finance.xml",
-      "https://feedx.net/rss/zhengquan.xml",
-      "https://www.zhihu.com/rss",
-      "https://rsshub.app/fx678/kx"
     ],
     "en": [
       "https://www.fxstreet.com/rss",
