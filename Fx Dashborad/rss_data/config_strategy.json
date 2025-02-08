@@ -1,7 +1,8 @@
 {
   "rssSources": {
     "zh": [
-      "https://cn.investing.com/rss/commodities_Opinion.rss"
+      "https://cn.investing.com/rss/commodities_Opinion.rss",
+      "https://cn.investing.com/rss/commodities_Strategy.rss"
     ],
     "en": [
     ],
