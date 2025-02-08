@@ -11,6 +11,8 @@
       "https://www.marketwatch.com/rss/topstories"
     ],
     "jp": [
+      "https://assets.wor.jp/rss/rdf/minkabufx/stock.rdf",
+      "https://assets.wor.jp/rss/rdf/minkabufx/statement.rdf",
       "https://assets.wor.jp/rss/rdf/nikkei/business.rdf",
       "https://assets.wor.jp/rss/rdf/nikkei/markets.rdf",
       "https://assets.wor.jp/rss/rdf/reuters/business.rdf",
