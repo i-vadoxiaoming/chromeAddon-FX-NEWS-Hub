@@ -210,8 +210,27 @@ function renderArticles(articles, append = false) {
         const title = document.createElement('a');
         title.className = `article-title ${isArticleRead(article.link) ? 'read' : ''}`;
         title.href = article.link || '#';
-        title.textContent = article.title + (article.site ? ` [${article.site}]` : '');
+        title.textContent = article.title;
         title.target = '_blank';
+
+        //来源
+        const fromContainer = document.createElement('div');
+        fromContainer.className = 'article-from-container';
+
+         // 来源-图标
+        //  const fromImage = document.createElement('img');
+        //  fromImage.src = './icon-16.png';
+        //  fromImage.alt = '来源';
+        //  fromContainer.appendChild(fromImage);
+
+        //  const fromSpan1 = document.createElement('span');
+        //  fromSpan1.textContent = '来源:';
+        //  fromContainer.appendChild(fromSpan1);
+
+         const fromSpan2 = document.createElement('span');
+         fromSpan2.textContent = article.site ? article.site : '';
+         fromContainer.appendChild(fromSpan2);
+
         
         // 添加点击事件
         title.addEventListener('click', () => {
@@ -220,6 +239,7 @@ function renderArticles(articles, append = false) {
         });
         
         titleContainer.appendChild(title);
+        titleContainer.appendChild(fromContainer);
         articleCard.appendChild(titleContainer);
         articleList.appendChild(articleCard);
     });

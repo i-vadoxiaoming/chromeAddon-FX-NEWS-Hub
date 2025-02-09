@@ -80,6 +80,21 @@ body {
   text-decoration: underline;
 }
 
+.article-from-container {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  font-size: 16px;
+  color: #898888;
+  display: flex;
+}
+
+.article-from-container img {
+  width: 18px;
+  height: 18px;
+  margin: auto;
+}
+
 #loading {
   text-align: center;
   padding: 10px;
